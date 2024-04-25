@@ -1,0 +1,47 @@
+.aboutContainer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 50px;
+  background: black;
+  opacity: 90%;
+  color: white;
+  border-radius: 2rem 2rem 0 0;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
+  gap: 2rem;
+}
+
+.imageContainer {
+  flex: 0 0 200px; /* flex-grow, flex-shrink, flex-basis */
+  height: 200px;
+  border-radius: 50%;
+  overflow: hidden;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.portrait {
+  width: 100%;
+  height: auto;
+  transition: transform 0.3s ease-in-out;
+}
+
+.portrait:hover {
+  transform: scale(1.1);
+}
+
+.bio {
+  flex: 1;
+  padding: 20px;
+  background: rgba(255, 255, 255, 0.8);
+  border-radius: 8px;
+  color: #333;
+}
+
+.bio h1 {
+  color: #fe6b86;
+}
+
+.bio p {
+  text-align: justify;
+  line-height: 1.6;
+}

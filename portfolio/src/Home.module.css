@@ -1,10 +1,33 @@
 @font-face {
-  font-family: "feltful";
-  src: url("./Fonts/feltful_regular.otf") format("opentype");
+  font-family: "coolvetica";
+  src: url("./Fonts/coolvetica\ rg.otf") format("opentype");
 }
 
-.pageOverlay,
+.pageBackground {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
+  background-size: 400% 400%;
+  animation: gradientAnimation 15s ease infinite;
+  z-index: -1;
+}
+
 .pageContainer {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+}
+
+.pageOverlay {
   position: relative;
   width: 100%;
   height: 100vh;
@@ -15,8 +38,6 @@
   background-size: 400% 400%;
   animation: gradientAnimation 15s ease infinite;
   overflow: hidden;
-}
-.pageOverlay {
   position: absolute;
   opacity: 10%;
   z-index: 4;
@@ -43,7 +64,22 @@
   margin-top: auto;
   opacity: 100%;
   overflow: hidden;
-  animation: gradientAnimation 15s ease infinite;
+  animation: popAndRise 2s ease-out forwards;
+}
+
+@keyframes popAndRise {
+  0% {
+    transform: translateY(100vh) scale(0.5);
+    opacity: 0;
+  }
+  60% {
+    transform: translateY(-10vh) scale(1.2);
+    opacity: 0.9;
+  }
+  100% {
+    transform: translateY(0) scale(1);
+    opacity: 1;
+  }
 }
 
 .subtitle {
@@ -68,16 +104,15 @@
 .scrollingText {
   display: inline-block;
   font-size: 35vw;
-  padding-left: 100%;
   color: #000;
   z-index: 2;
-  font-family: "feltful", sans-serif;
-  animation: scrollRightwards 2400s linear infinite;
+  font-family: "coolvetica", sans-serif;
+  animation: scrollRightwards 3000s linear infinite;
 }
 
 @keyframes scrollRightwards {
   from {
-    transform: translateX(-100%);
+    transform: translateX(-99%);
   }
   to {
     transform: translateX(0%);
