@@ -13,7 +13,7 @@
   left: 0;
   right: 0;
   z-index: 1000;
-  transition: height 0.3s ease; /* Smooth transition for height changes */
+  transition: height 0.3s ease;
 }
 
 .navList {
@@ -22,21 +22,25 @@
   gap: 1rem;
   padding: 0;
   margin: 0;
-  transition: transform 0.3s ease-in-out; /* Smooth opening/closing transitions */
+  transition: transform 0.3s ease-in-out;
 }
 
 .navItem {
+  margin: auto;
   padding: 0.5rem 1rem;
 }
 
 .navItem a {
   text-decoration: none;
+}
+
+.navItem p {
   color: #fe6b86;
   font-weight: bold;
   transition: color 0.3s ease;
 }
 
-.navItem a:hover {
+.navItem p:hover {
   color: black;
   opacity: 75%;
 }
@@ -46,8 +50,8 @@
   .navbar {
     width: 100vw;
     padding: 0.5rem 1rem;
-    margin: 0; /* Remove margins to use space more efficiently */
-    border-radius: 0; /* Full width navbar */
+    margin: 0;
+    border-radius: 0;
     box-sizing: border-box;
   }
 
@@ -55,23 +59,18 @@
     padding: 1rem 2rem;
     width: 100vw;
     flex-direction: column;
-    display: none; /* Start hidden */
-    transform: translateY(-20px); /* Start slightly above to slide down */
-    opacity: 0; /* Start invisible */
+    display: none;
+    transform: translateY(-20px);
+    opacity: 0;
   }
 
   .navList.active {
     display: flex;
-    transform: translateY(0); /* Slide into correct position */
-    opacity: 1; /* Fade in */
-    flex-grow: 1; /* Ensure it covers vertical space if needed */
-    background-color: rgba(
-      255,
-      255,
-      255,
-      0.95
-    ); /* Maintain consistency in background */
-    padding: 1rem 0; /* Vertical padding within the menu */
+    transform: translateY(0);
+    opacity: 1;
+    flex-grow: 1;
+    background-color: rgba(255, 255, 255, 0.95);
+    padding: 1rem 0;
   }
 
   .navItem {
@@ -79,21 +78,21 @@
     text-align: center;
   }
 
-  .navItem a {
+  .navItem p {
     display: block;
     width: 100%;
-    padding: 12px 10px; /* Larger touch targets */
+    padding: 12px 10px;
   }
 
   .menuButton {
-    margin-left:auto;
+    margin-left: auto;
     background: none;
     border: none;
     color: #fe6b86;
-    font-size: 30px; /* Larger button for easy interaction */
-    display: block; /* Show button */
+    font-size: 30px;
+    display: block;
     width: fit-content;
-    text-align: right; /* Align the button to the right */
-    padding: 10px 20px; /* Sufficient padding for easy tapping */
+    text-align: right;
+    padding: 10px 20px;
   }
 }

@@ -12,9 +12,9 @@ const baseStyle: CSSProperties = {
 
 const P = ({ children, className, style }: IProps) => {
   return (
-    <div style={{ ...baseStyle, ...style }} className={className}>
+    <p style={{ ...baseStyle, ...style }} className={className}>
       {children}
-    </div>
+    </p>
   );
 };
 

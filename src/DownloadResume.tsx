@@ -1,3 +1,5 @@
+import P from "./Text/P";
+
 const DownloadResume = () => {
   const handleDownload = () => {
     const link = document.createElement("a");
@@ -8,12 +10,9 @@ const DownloadResume = () => {
   };
 
   return (
-    <button
-      onClick={handleDownload}
-      style={{ padding: "10px 20px", fontSize: "16px", cursor: "pointer" }}
-    >
-      Download Resume
-    </button>
+    <div onClick={handleDownload} style={{ cursor: "pointer" }}>
+      <P style={{ fontSize: "16px" }}>Download Resume</P>
+    </div>
   );
 };
 

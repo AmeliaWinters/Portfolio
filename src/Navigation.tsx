@@ -4,6 +4,7 @@ import logo from "./Assets/Images/Logo.png";
 import P from "./Text/P";
 import DownloadResume from "./DownloadResume";
 import useWindowSize from "./useWindowSize";
+import { HamburgerButton } from "./HamburgerButton";
 
 const Navigation = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -26,14 +27,7 @@ const Navigation = () => {
       >
         {tagLine}
       </P>
-      {toggleMobile && (
-        <button
-          className={styles.menuButton}
-          onClick={() => setIsOpen(!isOpen)}
-        >
-          &#9776; {/* Hamburger icon */}
-        </button>
-      )}
+      {toggleMobile && <HamburgerButton onClick={() => setIsOpen(!isOpen)} />}
       <ul className={`${styles.navList} ${isOpen ? styles.active : ""}`}>
         <li className={styles.navItem}>
           <a href="/">
