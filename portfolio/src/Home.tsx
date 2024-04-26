@@ -1,5 +1,5 @@
 import styles from "./Home.module.css";
-import personImage from "./Images/AmeliaHi3.png";
+import personImage from "./Images/AmeliaHi.png";
 import ScrollingText from "./ScrollingText";
 
 const Home = () => {

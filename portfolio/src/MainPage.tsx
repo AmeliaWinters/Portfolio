@@ -8,6 +8,17 @@ const MainPage = () => {
       <Background />
       <Home />
       <About />
+      {/* TODO: Download Resume Button
+  Interactive Resume
+  Projects Section
+   Copyright
+   Scroll Down Infobox
+   Contact Page
+   Code Snippet Formatter
+   Skills section 
+   API Integration
+   Chatbot
+   */}
     </div>
   );
 };

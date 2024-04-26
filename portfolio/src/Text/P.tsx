@@ -1,14 +1,18 @@
 import { CSSProperties } from "react";
-import styles from "./styles.module.css";
 
 interface IProps {
   children: string;
+  className?: string;
   style?: CSSProperties;
 }
 
-const P = ({ children, style }: IProps) => {
+const baseStyle: CSSProperties = {
+  fontFamily: '"coolvetica", sans-serif',
+};
+
+const P = ({ children, className, style }: IProps) => {
   return (
-    <div style={style} className={styles.text}>
+    <div style={{ ...baseStyle, ...style }} className={className}>
       {children}
     </div>
   );
