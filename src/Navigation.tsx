@@ -26,9 +26,14 @@ const Navigation = () => {
       >
         {tagLine}
       </P>
-      <button className={styles.menuButton} onClick={() => setIsOpen(!isOpen)}>
-        &#9776; {/* Hamburger icon */}
-      </button>
+      {toggleMobile && (
+        <button
+          className={styles.menuButton}
+          onClick={() => setIsOpen(!isOpen)}
+        >
+          &#9776; {/* Hamburger icon */}
+        </button>
+      )}
       <ul className={`${styles.navList} ${isOpen ? styles.active : ""}`}>
         <li className={styles.navItem}>
           <a href="/">
