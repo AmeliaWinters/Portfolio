@@ -13,6 +13,7 @@
   left: 0;
   right: 0;
   z-index: 1000;
+  transition: height 0.3s ease; /* Smooth transition for height changes */
 }
 
 .navList {
@@ -21,6 +22,7 @@
   gap: 1rem;
   padding: 0;
   margin: 0;
+  transition: transform 0.3s ease-in-out; /* Smooth opening/closing transitions */
 }
 
 .navItem {
@@ -37,4 +39,61 @@
 .navItem a:hover {
   color: black;
   opacity: 75%;
+}
+
+/* Mobile styles */
+@media (max-width: 768px) {
+  .navbar {
+    width: 100vw;
+    padding: 0.5rem 1rem;
+    margin: 0; /* Remove margins to use space more efficiently */
+    border-radius: 0; /* Full width navbar */
+    box-sizing: border-box;
+  }
+
+  .navList {
+    padding: 1rem 2rem;
+    width: 100vw;
+    flex-direction: column;
+    display: none; /* Start hidden */
+    transform: translateY(-20px); /* Start slightly above to slide down */
+    opacity: 0; /* Start invisible */
+  }
+
+  .navList.active {
+    display: flex;
+    transform: translateY(0); /* Slide into correct position */
+    opacity: 1; /* Fade in */
+    flex-grow: 1; /* Ensure it covers vertical space if needed */
+    background-color: rgba(
+      255,
+      255,
+      255,
+      0.95
+    ); /* Maintain consistency in background */
+    padding: 1rem 0; /* Vertical padding within the menu */
+  }
+
+  .navItem {
+    width: 100%;
+    text-align: center;
+  }
+
+  .navItem a {
+    display: block;
+    width: 100%;
+    padding: 12px 10px; /* Larger touch targets */
+  }
+
+  .menuButton {
+    margin-left:auto;
+    background: none;
+    border: none;
+    color: #fe6b86;
+    font-size: 30px; /* Larger button for easy interaction */
+    display: block; /* Show button */
+    width: fit-content;
+    text-align: right; /* Align the button to the right */
+    padding: 10px 20px; /* Sufficient padding for easy tapping */
+  }
 }

@@ -1,19 +1,22 @@
 .aboutContainer {
   display: flex;
+  flex-direction: column; /* Stack elements vertically on mobile */
   align-items: center;
   justify-content: center;
-  padding: 15rem 2rem;
+  padding: 4rem 2rem; /* Reduce padding for mobile */
   background: black;
   opacity: 90%;
   color: white;
   border-radius: 2rem 2rem 0 0;
   box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.19), 0 0rem 0.6rem rgba(0, 0, 0, 0.23);
   gap: 2rem;
+  margin: auto; /* Ensure it doesn't exceed the viewport width */
 }
 
 .imageContainer {
-  flex: 0 0 20rem;
-  height: 20rem;
+  width: 80%; /* Make width responsive */
+  max-width: 20rem; /* Maximum width to maintain design integrity */
+  height: auto; /* Adjust height automatically */
   border-radius: 50%;
   overflow: hidden;
   box-shadow: 0 0.4rem 0.8rem rgba(0, 0, 0, 0.1);
@@ -30,7 +33,8 @@
 }
 
 .bio {
-  flex: 1;
+  width: 90%; /* Make width responsive */
+  max-width: 600px; /* Limit maximum width */
   padding: 2rem;
   background: rgba(255, 255, 255, 0.8);
   border-radius: 8px;
@@ -39,11 +43,33 @@
 
 .bioHeader {
   color: #fe6b86;
-  font-size: 3rem;
+  font-size: 2rem; /* Adjust font size for smaller devices */
 }
 
 .bioText {
   margin-top: 1rem;
   text-align: justify;
-  font-size: 2rem;
+  font-size: 1.5rem; /* Adjust font size for readability on mobile */
+}
+
+/* Styles for tablets and desktops */
+@media (min-width: 768px) {
+  .aboutContainer {
+    flex-direction: row; /* Side-by-side layout on larger screens */
+    padding: 15rem 2rem; /* Increase padding for larger screens */
+    border-radius: 1rem 1rem 0 0;
+  }
+
+  .imageContainer {
+    flex: 0 0 20rem; /* Fix width and height as originally designed */
+    height: 20rem;
+  }
+
+  .bioHeader {
+    font-size: 3rem; /* Increase font size back for larger screens */
+  }
+
+  .bioText {
+    font-size: 2rem; /* Increase font size for readability */
+  }
 }

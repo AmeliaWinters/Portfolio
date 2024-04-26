@@ -1,17 +1,35 @@
-import styles from "./Navigation.module.css"; // Ensure you have this CSS module file
-import logo from "./Images/Logo.png";
+import { useState } from "react";
+import styles from "./Navigation.module.css";
+import logo from "./Assets/Images/Logo.png";
 import P from "./Text/P";
+import DownloadResume from "./DownloadResume";
+import useWindowSize from "./useWindowSize";
 
 const Navigation = () => {
+  const [isOpen, setIsOpen] = useState(false);
+  const { width } = useWindowSize();
+  const toggleMobile = width && width < 768;
+
+  const tagLine = toggleMobile
+    ? "Full-Stack Code Artist"
+    : "Engineering Brilliance, Seeking Challenges - Full-Stack Code Artist";
+
   return (
     <nav className={styles.navbar}>
       <img src={logo} width="40" />
       <P
-        style={{ marginRight: "auto", marginLeft: "1rem", fontSize: "1.2rem" }}
+        style={{
+          marginRight: "auto",
+          marginLeft: "1rem",
+          fontSize: "1.2rem",
+        }}
       >
-        Engineering Brilliance, Seeking Challenges - Full-Stack Code Artist
+        {tagLine}
       </P>
-      <ul className={styles.navList}>
+      <button className={styles.menuButton} onClick={() => setIsOpen(!isOpen)}>
+        &#9776; {/* Hamburger icon */}
+      </button>
+      <ul className={`${styles.navList} ${isOpen ? styles.active : ""}`}>
         <li className={styles.navItem}>
           <a href="/">
             <P>Home</P>
@@ -27,8 +45,12 @@ const Navigation = () => {
             <P>Projects</P>
           </a>
         </li>
+        <li className={styles.navItem}>
+          <DownloadResume />
+        </li>
       </ul>
     </nav>
   );
 };
+
 export default Navigation;

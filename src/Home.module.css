@@ -1,6 +1,6 @@
 @font-face {
   font-family: "coolvetica";
-  src: url("./Fonts/coolvetica\ rg.otf") format("opentype");
+  src: url("./Assets/Fonts/coolvetica\ rg.otf") format("opentype");
 }
 
 .pageBackground {
@@ -28,7 +28,7 @@
 }
 
 .pageOverlay {
-  position: relative;
+  position: absolute;
   width: 100%;
   height: 100vh;
   display: flex;
@@ -38,7 +38,6 @@
   background-size: 400% 400%;
   animation: gradientAnimation 15s ease infinite;
   overflow: hidden;
-  position: absolute;
   opacity: 10%;
   z-index: 4;
 }
@@ -58,7 +57,8 @@
 }
 
 .centralImage {
-  height: 90%;
+  width: auto; /* Adjust to maintain aspect ratio */
+  height: 90%; /* Lower height percentage for better control */
   z-index: 3;
   position: relative;
   margin-top: auto;
@@ -80,14 +80,6 @@
     transform: translateY(0) scale(1);
     opacity: 1;
   }
-}
-
-.subtitle {
-  position: absolute;
-  top: 70%;
-  font-size: 2vw;
-  color: #000;
-  z-index: 3;
 }
 
 .scrollingTextContainer {
@@ -123,11 +115,26 @@
   width: 100%;
   height: 100%;
   position: absolute;
-  background-color: transparent; /* This is the base color; change as needed */
+  background-color: transparent;
   background-image: radial-gradient(
     circle,
     rgba(255, 255, 255, 0.1) 2px,
     transparent 1px
   );
-  background-size: 20px 20px; /* Size of your grid cells */
+  background-size: 20px 20px; /* Adjust based on design needs */
+}
+
+/* Responsive Adjustments for Mobile Devices */
+@media (max-width: 768px) {
+  .centralImage {
+    height: 60%; /* Further reduce the height for mobile devices */
+  }
+
+  .scrollingText {
+    font-size: 20vw; /* Increase size for visibility on small screens */
+  }
+
+  .pageContainer {
+    height: 75vh;
+  }
 }

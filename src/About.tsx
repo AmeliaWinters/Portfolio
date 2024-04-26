@@ -1,5 +1,5 @@
 import styles from "./About.module.css"; // Import CSS module for styling
-import portraitImage from "./Images/AmeliaChibi.png"; // Ensure you have a professional portrait image
+import portraitImage from "./Assets/Images/AmeliaChibi.png"; // Ensure you have a professional portrait image
 import P from "./Text/P";
 
 const About = () => {
