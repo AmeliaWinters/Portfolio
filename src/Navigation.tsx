@@ -13,7 +13,7 @@ const Navigation = () => {
 
   const tagLine = toggleMobile
     ? "Full-Stack Code Artist"
-    : "Engineering Brilliance, Seeking Challenges - Full-Stack Code Artist";
+    : "Coding Across the Stack, Delivering Across the Globe - Full-Stack Code Artist";
 
   return (
     <nav className={styles.navbar}>
