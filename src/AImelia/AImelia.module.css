@@ -119,6 +119,7 @@
   border-radius: 10px;
   padding: 10px;
   border: none;
+  max-width: calc(100% - 90px);
 }
 
 .sendButton {
@@ -126,7 +127,7 @@
   outline: 1px solid transparent;
   border-radius: 10px;
   padding: 10px;
-  margin-left: 5px;
+  margin-left: auto;
   cursor: pointer;
   color: #fff;
 }
