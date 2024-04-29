@@ -1,22 +1,22 @@
 .aboutContainer {
+  flex-direction: row;
+  padding: 10rem 2rem;
+  border-radius: 1rem 1rem 0 0;
   display: flex;
-  flex-direction: column; /* Stack elements vertically on mobile */
+
   align-items: center;
   justify-content: center;
-  padding: 4rem 2rem; /* Reduce padding for mobile */
   background: black;
   opacity: 90%;
   color: white;
-  border-radius: 2rem 2rem 0 0;
   box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.19), 0 0rem 0.6rem rgba(0, 0, 0, 0.23);
   gap: 2rem;
-  margin: auto; /* Ensure it doesn't exceed the viewport width */
+  margin: auto;
 }
 
 .imageContainer {
-  width: 80%; /* Make width responsive */
-  max-width: 20rem; /* Maximum width to maintain design integrity */
-  height: auto; /* Adjust height automatically */
+  height: 15rem;
+  width: 15rem;
   border-radius: 50%;
   overflow: hidden;
   box-shadow: 0 0.4rem 0.8rem rgba(0, 0, 0, 0.1);
@@ -24,7 +24,7 @@
 
 .portrait {
   width: 100%;
-  height: auto;
+  height: 100%;
   transition: transform 0.3s ease-in-out;
 }
 
@@ -33,8 +33,7 @@
 }
 
 .bio {
-  width: 90%; /* Make width responsive */
-  max-width: 600px; /* Limit maximum width */
+  width: 70%;
   padding: 2rem;
   background: rgba(255, 255, 255, 0.8);
   border-radius: 8px;
@@ -43,33 +42,33 @@
 
 .bioHeader {
   color: #fe6b86;
-  font-size: 2rem; /* Adjust font size for smaller devices */
+  font-size: 2rem;
 }
 
 .bioText {
   margin-top: 1rem;
   text-align: justify;
-  font-size: 1.5rem; /* Adjust font size for readability on mobile */
+  font-size: 1.5rem;
 }
 
-/* Styles for tablets and desktops */
-@media (min-width: 768px) {
+/* Styles for mobile */
+@media (max-width: 768px) {
   .aboutContainer {
-    flex-direction: row; /* Side-by-side layout on larger screens */
-    padding: 15rem 2rem; /* Increase padding for larger screens */
-    border-radius: 1rem 1rem 0 0;
+    flex-direction: column;
+    padding: 4rem 2rem;
+    border-radius: 2rem 2rem 0 0;
   }
 
   .imageContainer {
-    flex: 0 0 20rem; /* Fix width and height as originally designed */
-    height: 20rem;
+    width: 80%;
+    max-width: 20rem;
   }
 
   .bioHeader {
-    font-size: 3rem; /* Increase font size back for larger screens */
+    font-size: 3rem;
   }
 
   .bioText {
-    font-size: 2rem; /* Increase font size for readability */
+    font-size: 2rem;
   }
 }

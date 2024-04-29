@@ -1,7 +1,3 @@
-@font-face {
-  font-family: "coolvetica";
-  src: url("./Assets/Fonts/coolvetica\ rg.otf") format("opentype");
-}
 
 .pageBackground {
   position: fixed;
