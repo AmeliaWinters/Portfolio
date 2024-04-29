@@ -1,8 +1,7 @@
 {
   "name": "portfolio-vite",
-  "private": true,
-  "version": "0.1.0",
   "private": false,
+  "version": "0.1.0",
   "proxy": "http://localhost:5000",
   "type": "module",
   "scripts": {
@@ -14,13 +13,14 @@
   },
   "dependencies": {
     "@anthropic-ai/sdk": "^0.20.7",
-    "react": "^18.2.0",
-    "react-dom": "^18.2.0",
+    "aws-amplify": "^6.1.4",
     "dotenv": "^16.4.5",
     "express": "^4.19.2",
     "framer-motion": "^11.1.7",
     "node": "^22.0.0",
     "node-fetch": "^3.3.2",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
     "react-router-dom": "^6.23.0"
   },
   "devDependencies": {
@@ -28,18 +28,19 @@
     "@aws-amplify/backend-cli": "^0.14.1",
     "@types/react": "^18.2.66",
     "@types/react-dom": "^18.2.22",
-    "@typescript-eslint/eslint-plugin": "^7.2.0",
+    "@typescript-eslint/eslint-plugin": "7.2.0",
     "@typescript-eslint/parser": "^7.2.0",
     "@vitejs/plugin-react-swc": "^3.5.0",
     "aws-cdk": "^2.139.0",
     "aws-cdk-lib": "^2.139.0",
     "constructs": "^10.3.0",
     "esbuild": "^0.20.2",
-    "nodemon": "^3.1.0",
     "eslint": "^8.57.0",
     "eslint-plugin-react-hooks": "^4.6.0",
     "eslint-plugin-react-refresh": "^0.4.6",
+    "nodemon": "^3.1.0",
     "ts-node": "^10.9.2",
+    "tsx": "^4.7.3",
     "typescript": "^5.4.5",
     "vite": "^5.2.0"
   }
