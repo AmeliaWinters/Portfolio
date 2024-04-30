@@ -14,7 +14,16 @@ const App: FC = () => {
           <Route path="/" element={<MainPage />} />
           <Route path="/projects" element={<ProjectsPage />} />
         </Routes>
-        <div style={{ position: "fixed", bottom: "0px", left: "15px", fontSize:'1.5rem' }}>
+        <div
+          style={{
+            position: "fixed",
+            bottom: "0px",
+            left: "15px",
+            fontSize: "1.5rem",
+            color: "white",
+            mixBlendMode: "difference",
+          }}
+        >
           <P>Work in progress</P>
         </div>
       </div>
