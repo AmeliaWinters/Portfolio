@@ -1,6 +1,6 @@
 import styles from "./AImelia.module.css";
 import { SetStateAction, useEffect, useRef, useState } from "react";
-import AImelia from "../Assets/Images/AmeliaChibi.png";
+import AImelia from "../Assets/Images/AI-melia.webp";
 import { ChatIcon } from "../Assets/Icons/ChatIcon.tsx";
 
 export interface ChatMessage {
@@ -17,7 +17,7 @@ export const AIMelia = () => {
     {
       from: "assistant",
       message:
-        "Hey! I'm AI-melia, I'm here to help you get to know Amelia more. Please ask me any questions you might have :)",
+        "Heyo! \nI'm AI-melia, and I'm here to help you learn more about Amelia. Please feel free to ask me any questions! :)",
     },
   ]);
   const [isOpen, setIsOpen] = useState(true);
