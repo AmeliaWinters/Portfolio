@@ -9,7 +9,7 @@ export interface ChatMessage {
 }
 
 export const apiUrl =
-  "https://5s39r2ffrd.execute-api.eu-north-1.amazonaws.com/dev";
+  "https://6wn4toerma.execute-api.eu-north-1.amazonaws.com/staging";
 
 export const AIMelia = () => {
   const [isLoading, setIsLoading] = useState(false);
