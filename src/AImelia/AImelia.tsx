@@ -8,6 +8,9 @@ export interface ChatMessage {
   message: string;
 }
 
+export const apiUrl =
+  "https://5s39r2ffrd.execute-api.eu-north-1.amazonaws.com/dev";
+
 export const AIMelia = () => {
   const [isLoading, setIsLoading] = useState(false);
   const [messages, setMessages] = useState<ChatMessage[]>([
@@ -22,7 +25,7 @@ export const AIMelia = () => {
 
   const getMessage = async (messages: ChatMessage[]) => {
     try {
-      const response = await fetch("/createMessage", {
+      const response = await fetch(`${apiUrl}/msg`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(messages),

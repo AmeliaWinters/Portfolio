@@ -1,0 +1,12 @@
+{
+  "version": 1,
+  "paths": {
+    "/msg": {
+      "name": "/msg",
+      "lambdaFunction": "msgfunction",
+      "permissions": {
+        "setting": "open"
+      }
+    }
+  }
+}

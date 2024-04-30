@@ -1,0 +1,7 @@
+{
+  "httpMethod": "POST",
+  "body": "[{\"from\": \"user\", \"message\": \"Hello, how can I help you today?\"}]",
+  "headers": {
+    "Content-Type": "application/json"
+  }
+}

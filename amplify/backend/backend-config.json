@@ -1,0 +1,43 @@
+{
+  "api": {
+    "PortfolioAPI": {
+      "dependsOn": [
+        {
+          "attributes": [
+            "Name",
+            "Arn"
+          ],
+          "category": "function",
+          "resourceName": "msgfunction"
+        }
+      ],
+      "providerPlugin": "awscloudformation",
+      "service": "API Gateway"
+    }
+  },
+  "function": {
+    "msgfunction": {
+      "build": true,
+      "providerPlugin": "awscloudformation",
+      "service": "Lambda"
+    }
+  },
+  "parameters": {
+    "AMPLIFY_function_msgfunction_deploymentBucketName": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "msgfunction"
+        }
+      ]
+    },
+    "AMPLIFY_function_msgfunction_s3Key": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "msgfunction"
+        }
+      ]
+    }
+  }
+}
