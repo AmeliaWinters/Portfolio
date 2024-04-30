@@ -1,5 +1,5 @@
 import styles from "./AImelia.module.css";
-import { SetStateAction, useState } from "react";
+import { SetStateAction, useEffect, useRef, useState } from "react";
 import AImelia from "../Assets/Images/AmeliaChibi.png";
 import { ChatIcon } from "../Assets/Icons/ChatIcon.tsx";
 
@@ -22,6 +22,13 @@ export const AIMelia = () => {
   ]);
   const [isOpen, setIsOpen] = useState(true);
   const [inputText, setInputText] = useState("");
+  const messagesEndRef = useRef<any>(null);
+
+  useEffect(() => {
+    if (messagesEndRef.current) {
+      messagesEndRef.current.scrollTop = messagesEndRef.current.scrollHeight;
+    }
+  }, [messages]);
 
   const getMessage = async (messages: ChatMessage[]) => {
     try {
@@ -74,9 +81,9 @@ export const AIMelia = () => {
     <div className={styles.chatbotContainer}>
       {isOpen && (
         <div className={styles.chatWindow}>
-          <div className={styles.messages}>
+          <div className={styles.messages} ref={messagesEndRef}>
             {messages.map((msg, index) => (
-              <div className={styles.messageContainer}>
+              <div key={index} className={styles.messageContainer}>
                 {msg.from === "assistant" && (
                   <img
                     src={AImelia}
@@ -85,7 +92,6 @@ export const AIMelia = () => {
                   />
                 )}
                 <div
-                  key={index}
                   className={
                     msg.from === "user"
                       ? styles.userMessage
