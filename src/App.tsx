@@ -8,6 +8,7 @@ import { Links } from "./Links/Links";
 import { WIP } from "./WIP";
 import styles from "./App.module.css";
 import useWindowSize from "./useWindowSize";
+import ScrollHint from "./Greeting/ScrollHint";
 
 const App: FC = () => {
   const { isMobile } = useWindowSize();
@@ -74,6 +75,7 @@ const App: FC = () => {
       <About />
       <AIMelia />
       {!isMobile && <Links />}
+      <ScrollHint />
       <WIP />
       <div className={styles.ameliaCursor} />
     </div>
