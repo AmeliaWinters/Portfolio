@@ -43,6 +43,14 @@ const About = () => {
         </PAbout>
         <PHAbout> The Access Group</PHAbout>
         <PAbout>.</PAbout>
+        <br />
+        <br />
+        <PAbout>
+          Whilst not coding I enjoy volunteering for my charity, practising
+          martial arts, and thinking I look super cool playing
+        </PAbout>
+        <PHAbout> Beat Saber</PHAbout>
+        <PAbout>.</PAbout>
       </div>
     </div>
   );
