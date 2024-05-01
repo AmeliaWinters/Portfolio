@@ -5,11 +5,11 @@ export const WIP = () => {
     <div
       style={{
         position: "fixed",
-        bottom: "0px",
+        top: "0px",
         left: "0",
         right: "0",
-        zIndex: "4",
-        fontSize: "1.5rem",
+        zIndex: "1001",
+        fontSize: "1rem",
         color: "white",
         mixBlendMode: "difference",
       }}

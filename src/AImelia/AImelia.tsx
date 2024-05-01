@@ -8,14 +8,14 @@ export interface IChatMessage {
   message: string;
 }
 
-
-
 export const AIMelia = () => {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
     <div className={styles.chatbotContainer}>
-      {isOpen && <ChatWindow />}
+      <div style={{ display: isOpen ? "contents" : "none" }}>
+        <ChatWindow />
+      </div>
       <button className={styles.chatButton} onClick={() => setIsOpen(!isOpen)}>
         <ChatIcon />
       </button>
