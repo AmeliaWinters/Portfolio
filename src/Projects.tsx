@@ -46,7 +46,7 @@ const projects: IProject[] = [
 ];
 
 const Projects = () => {
-  const [currentImage, setCurrentImage] = useState(Portfolio);
+  const [currentImage, setCurrentImage] = useState();
   const imageRef = useRef<HTMLDivElement>(null);
   const projectRef = useRef<HTMLDivElement>(null);
 
