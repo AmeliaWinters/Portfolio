@@ -20,7 +20,7 @@ export const AIMelia = () => {
         "Heyo! \nI'm AI-melia, and I'm here to help you learn more about Amelia. Please feel free to ask me any questions! :)",
     },
   ]);
-  const [isOpen, setIsOpen] = useState(true);
+  const [isOpen, setIsOpen] = useState(false);
   const [inputText, setInputText] = useState("");
   const messagesEndRef = useRef<any>(null);
 

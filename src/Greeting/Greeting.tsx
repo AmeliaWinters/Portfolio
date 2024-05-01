@@ -1,8 +1,8 @@
-import styles from "./Home.module.css";
-import personImage from "./Assets/Images/AmeliaHi.png";
+import styles from "./Greeting.module.css";
+import personImage from "../Assets/Images/AmeliaHi.png";
 import ScrollingText from "./ScrollingText";
 
-const Home = () => {
+const Greeting = () => {
   return (
     <div className={styles.pageContainer}>
       <ScrollingText text="Amelia Winters " />
@@ -12,4 +12,4 @@ const Home = () => {
   );
 };
 
-export default Home;
+export default Greeting;

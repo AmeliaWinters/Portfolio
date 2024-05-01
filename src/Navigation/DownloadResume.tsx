@@ -1,4 +1,4 @@
-import P from "./Text/P";
+import P from "../Text/P";
 
 const DownloadResume = () => {
   const handleDownload = () => {

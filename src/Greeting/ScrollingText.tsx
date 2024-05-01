@@ -1,4 +1,4 @@
-import styles from "./Home.module.css";
+import styles from "./Greeting.module.css";
 
 interface IProps {
   text: string;

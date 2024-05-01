@@ -7,21 +7,9 @@ interface IProps {
   children: string;
 }
 
-const PHAbout = ({ children }: IProps) => {
-  return (
-    <PH className={styles.bioText} style={{ fontSize: "1.3rem" }}>
-      {children}
-    </PH>
-  );
-};
-
-const PAbout = ({ children }: IProps) => {
-  return <P className={styles.bioText}>{children}</P>;
-};
-
 const About = () => {
   return (
-    <div className={styles.aboutContainer}>
+    <div className={styles.aboutContainer} id="about">
       <div className={styles.imageContainer}>
         <img
           src={portraitImage}
@@ -61,3 +49,15 @@ const About = () => {
 };
 
 export default About;
+
+const PHAbout = ({ children }: IProps) => {
+  return (
+    <PH className={styles.bioText} style={{ fontSize: "1.3rem" }}>
+      {children}
+    </PH>
+  );
+};
+
+const PAbout = ({ children }: IProps) => {
+  return <P className={styles.bioText}>{children}</P>;
+};

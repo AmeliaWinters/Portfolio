@@ -1,33 +1,79 @@
-import { FC } from "react";
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import ProjectsPage from "./Projects";
-import Navigation from "./Navigation";
-import MainPage from "./MainPage";
-import P from "./Text/P";
+import { FC, useEffect } from "react";
+import Navigation from "./Navigation/Navigation";
+import { AIMelia } from "./AImelia/AImelia";
+import About from "./About/About";
+import { Background } from "./Greeting/Background";
+import Greeting from "./Greeting/Greeting";
+import { Links } from "./Links/Links";
+import { WIP } from "./WIP";
+import styles from "./App.module.css";
 
 const App: FC = () => {
+  useEffect(() => {
+    const cursor: HTMLElement | null = document.querySelector(
+      `.${styles.ameliaCursor}`
+    );
+    const handleMouseMove = (event: { clientX: any; clientY: any }) => {
+      if (cursor) {
+        cursor.style.left = `${event.clientX}px`;
+        cursor.style.top = `${event.clientY}px`;
+      }
+
+      const trail = document.createElement("div");
+      trail.className = styles.cursorTrail;
+      document.body.appendChild(trail);
+      trail.style.left = `${event.clientX}px`;
+      trail.style.top = `${event.clientY}px`;
+
+      setTimeout(() => {
+        trail.style.opacity = "0";
+        trail.style.transform = "scale(0)";
+      }, 100);
+      setTimeout(() => {
+        document.body.removeChild(trail);
+      }, 800);
+    };
+
+    const addEffects = () => {
+      if (!cursor) return;
+      cursor.classList.add(styles.clickEffect);
+      setTimeout(() => {
+        cursor.classList.remove(styles.clickEffect);
+      }, 200);
+    };
+
+    const onMouseDown = () => {
+      if (!cursor) return;
+      cursor.classList.add(styles.clickEffect);
+    };
+
+    const onMouseUp = () => {
+      if (!cursor) return;
+      cursor.classList.remove(styles.clickEffect);
+    };
+
+    document.addEventListener("mousemove", handleMouseMove);
+    document.addEventListener("click", addEffects);
+    document.addEventListener("mousedown", onMouseDown);
+    document.addEventListener("mouseup", onMouseUp);
+
+    return () => {
+      document.removeEventListener("mousemove", handleMouseMove);
+      document.removeEventListener("click", addEffects);
+    };
+  }, []);
+
   return (
-    <Router>
-      <div>
-        <Navigation />
-        <Routes>
-          <Route path="/" element={<MainPage />} />
-          <Route path="/projects" element={<ProjectsPage />} />
-        </Routes>
-        <div
-          style={{
-            position: "fixed",
-            bottom: "0px",
-            left: "15px",
-            fontSize: "1.5rem",
-            color: "white",
-            mixBlendMode: "difference",
-          }}
-        >
-          <P>Work in progress</P>
-        </div>
-      </div>
-    </Router>
+    <div>
+      <Navigation />
+      <Background />
+      <Greeting />
+      <About />
+      <AIMelia />
+      <Links />
+      <WIP />
+      <div className={styles.ameliaCursor} />
+    </div>
   );
 };
 
