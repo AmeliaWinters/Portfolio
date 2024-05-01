@@ -48,10 +48,11 @@
 .bioText {
   margin-top: 1rem;
   text-align: justify;
-  font-size: 1.5rem;
+  font-size: 1.3rem;
+  display: inline;
 }
 
-/* Styles for mobile */
+/* Mobile */
 @media (max-width: 768px) {
   .aboutContainer {
     flex-direction: column;
@@ -65,10 +66,10 @@
   }
 
   .bioHeader {
-    font-size: 3rem;
+    font-size: 1.5rem;
   }
 
   .bioText {
-    font-size: 2rem;
+    font-size: 1rem;
   }
 }
