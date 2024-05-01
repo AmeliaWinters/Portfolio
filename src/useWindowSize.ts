@@ -5,11 +5,12 @@ interface WindowSize {
   height: number | undefined;
 }
 
-const useWindowSize = (): WindowSize => {
+const useWindowSize = () => {
   const [windowSize, setWindowSize] = useState<WindowSize>({
     width: undefined,
     height: undefined,
   });
+  const isMobile = windowSize.width && windowSize.width < 768;
 
   useEffect(() => {
     const handleResize = () => {
@@ -21,14 +22,12 @@ const useWindowSize = (): WindowSize => {
 
     window.addEventListener("resize", handleResize);
 
-    // Call handleResize immediately to update the state with the initial window size
     handleResize();
 
-    // Clean up the event listener when the component unmounts
     return () => window.removeEventListener("resize", handleResize);
-  }, []); // Empty array ensures that effect is only run on mount and unmount
+  }, []);
 
-  return windowSize;
+  return { windowSize, isMobile };
 };
 
 export default useWindowSize;

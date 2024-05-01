@@ -8,11 +8,11 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  position: absolute;
+  position: relative;
   top: 0;
   left: 0;
   right: 0;
-  z-index: 1000;
+  z-index: 1;
   transition: height 0.75s ease;
 }
 
@@ -86,31 +86,46 @@
 
   .navList {
     padding: 1rem 2rem;
-    width: 100vw;
+    width: 30vw;
     flex-direction: column;
     display: none;
-    transform: translateY(-20px);
+    position: absolute;
     opacity: 0;
+    right: 0;
+    top: 100%;
   }
 
   .navList.active {
     display: flex;
-    transform: translateY(0);
     opacity: 1;
     flex-grow: 1;
-    background-color: rgba(255, 255, 255, 0.95);
     padding: 1rem 0;
+    backdrop-filter: blur(10px);
+    transition: transform 1s ease-in-out;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    animation: expandOut 1s ease-out forwards;
+  }
+
+  @keyframes expandOut {
+    0% {
+      opacity: 0;
+      transform: scaleY(0%);
+    }
+    100% {
+      opacity: 1;
+      transform: scaleY(100%);
+    }
   }
 
   .navItem {
-    width: 100%;
-    text-align: center;
+    animation: fadeIn 1.5s ease-out forwards;
+    animation-delay: calc(0.3s + 0.2s * var(--animation-order));
   }
 
   .navItem p {
     display: block;
-    width: 100%;
     padding: 12px 10px;
+    text-align: center;
   }
 
   .menuButton {

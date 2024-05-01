@@ -1,6 +1,5 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import styles from "./Navigation.module.css";
-import logo from "./Assets/Images/Logo.png";
 import P from "../Text/P";
 import DownloadResume from "./DownloadResume";
 import useWindowSize from "../useWindowSize";
@@ -8,11 +7,8 @@ import { HamburgerButton } from "./HamburgerButton";
 
 const Navigation = () => {
   const [isOpen, setIsOpen] = useState(false);
-  const { width } = useWindowSize();
-  const toggleMobile = width && width < 768;
-  const tagLine = toggleMobile
-    ? "Amelia Winters"
-    : "Amelia Winters - Full-Stack Code Artist";
+  const { isMobile } = useWindowSize();
+  const tagLine = "Amelia Winters - Full-Stack Code Artist";
 
   const scrollToSection = (sectionId: string) => {
     const section = document.getElementById(sectionId);
@@ -35,7 +31,7 @@ const Navigation = () => {
       >
         {tagLine}
       </P>
-      {toggleMobile && <HamburgerButton onClick={() => setIsOpen(!isOpen)} />}
+      {isMobile && <HamburgerButton onClick={() => setIsOpen(!isOpen)} />}
       <ul className={`${styles.navList} ${isOpen ? styles.active : ""}`}>
         <li
           className={styles.navItem}

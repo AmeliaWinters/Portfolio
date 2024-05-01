@@ -7,8 +7,11 @@ import Greeting from "./Greeting/Greeting";
 import { Links } from "./Links/Links";
 import { WIP } from "./WIP";
 import styles from "./App.module.css";
+import useWindowSize from "./useWindowSize";
 
 const App: FC = () => {
+  const { isMobile } = useWindowSize();
+
   useEffect(() => {
     const cursor: HTMLElement | null = document.querySelector(
       `.${styles.ameliaCursor}`
@@ -70,7 +73,7 @@ const App: FC = () => {
       <Greeting />
       <About />
       <AIMelia />
-      <Links />
+      {!isMobile && <Links />}
       <WIP />
       <div className={styles.ameliaCursor} />
     </div>

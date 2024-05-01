@@ -59,11 +59,7 @@ const About = () => {
 export default About;
 
 const PHAbout = ({ children }: IProps) => {
-  return (
-    <PH className={styles.bioText} style={{ fontSize: "1.3rem" }}>
-      {children}
-    </PH>
-  );
+  return <PH className={styles.bioText}>{children}</PH>;
 };
 
 const PAbout = ({ children }: IProps) => {

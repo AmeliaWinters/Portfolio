@@ -56,13 +56,18 @@
 @media (max-width: 768px) {
   .aboutContainer {
     flex-direction: column;
-    padding: 4rem 2rem;
+    padding: 2rem 1rem;
     border-radius: 2rem 2rem 0 0;
   }
 
   .imageContainer {
-    width: 80%;
-    max-width: 20rem;
+    width: 50%;
+    height: 50%;
+  }
+
+  .bio {
+    width: 90%;
+    padding: 1rem;
   }
 
   .bioHeader {
@@ -70,6 +75,6 @@
   }
 
   .bioText {
-    font-size: 1rem;
+    font-size: 1rem !important;
   }
 }
