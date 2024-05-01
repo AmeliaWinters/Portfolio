@@ -1,0 +1,17 @@
+.chip {
+  display: inline-block;
+  padding: 5px 10px;
+  font-size: 0.9rem;
+  color: white;
+  border-radius: 25px;
+  background-color: #fe6b86;
+  margin: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  font-weight:600;
+}
+
+.chip:hover {
+  background-color: #fe6b86;
+  color: #ffffff;
+}
