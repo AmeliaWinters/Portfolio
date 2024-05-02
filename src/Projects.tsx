@@ -28,7 +28,7 @@ const projects: IProject[] = [
     technologies: ["React", "TypeScript", "C#/.NET", "SQL", "Azure"],
     imageUrl: EmployeePerformance,
     description:
-      "An full-functionality employee performance tracking and management system. ",
+      "A fully functional employee performance tracking and management system.",
   },
   {
     name: "Path to Great",
