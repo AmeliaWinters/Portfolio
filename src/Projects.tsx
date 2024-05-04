@@ -43,10 +43,17 @@ const projects: IProject[] = [
     description:
       "An app for giving and setting goals and objectives to employees.",
   },
+  {
+    name: "Wedding Venue Booking",
+    technologies: ["JavaScript", "jQuery", "PHP", "SQLite"],
+    imageUrl: "",
+    description:
+      "An app for giving and setting goals and objectives to employees.",
+  },
 ];
 
 const Projects = () => {
-  const [currentImage, setCurrentImage] = useState();
+  const [currentImage, setCurrentImage] = useState<string>();
   const imageRef = useRef<HTMLDivElement>(null);
   const projectRef = useRef<HTMLDivElement>(null);
 
