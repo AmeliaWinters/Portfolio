@@ -22,7 +22,7 @@ export const ProjectBox = ({
       onMouseEnter={() => onMouseEnter(project.imageUrl)}
       onMouseLeave={() => onMouseLeave("")}
       style={{
-        transform: isSelected ? "scale(1.05)" : "none",
+        transform: isSelected ? "scale(1.04)" : "none",
       }}
     >
       <H3

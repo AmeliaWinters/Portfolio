@@ -1,6 +1,5 @@
 .aboutContainer {
-  flex-direction: row;
-  padding: 10rem 2rem;
+  padding: 10rem;
   border-radius: 1rem 1rem 0 0;
   display: flex;
 

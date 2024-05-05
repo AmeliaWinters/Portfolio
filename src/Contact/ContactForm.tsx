@@ -30,17 +30,6 @@ export const ContactForm = () => {
   };
   return (
     <div className={sharedStyles.flexColumnWidthFillAvailable}>
-      <div
-        style={{
-          display: "flex",
-          flexDirection: "column",
-          marginBottom: "4rem",
-        }}
-      >
-        <div className={styles.title}>Contact Me</div>
-        <P style={{ margin: "0", fontSize: "1.5rem" }}>Let's Talk</P>
-      </div>
-
       <input
         type="text"
         name="name"
@@ -59,7 +48,7 @@ export const ContactForm = () => {
       />
       <textarea
         name="message"
-        rows={5}
+        rows={8}
         value={formData.message}
         onChange={handleChange}
         placeholder="Your Message"

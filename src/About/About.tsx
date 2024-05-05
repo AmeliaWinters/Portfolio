@@ -2,6 +2,7 @@ import styles from "./About.module.css"; // Import CSS module for styling
 import portraitImage from "../Assets/Images/AmeliaChibi.png"; // Ensure you have a professional portrait image
 import P from "../Text/P";
 import PH from "../Text/PH";
+import H1 from "../Text/H1";
 
 interface IProps {
   children: string;
@@ -18,9 +19,11 @@ const About = () => {
         />
       </div>
       <div className={styles.bio}>
-        <P className={styles.bioHeader}>About Me</P>
+        <H1 style={{ color: "#fe6b86" }}>About Me</H1>
+        <PAbout>Hiya!</PAbout>
+        <br />
         <PAbout>
-          Hey! I'm Amelia (she/her), and I'm a creative and high-performing
+          I'm Amelia (she/her), and I'm a creative and high-performing
           Full-Stack Engineer. I love solving challenges both in the virtual and
           physical world. I have commercial experience in both
         </PAbout>
@@ -35,22 +38,41 @@ const About = () => {
         <br />
         <br />
         <PAbout>
-          I made my first website in 2013, hosting flash games that I modded for
-          my friends, and I've been coding ever since. I'm a graduate of
-          Loughborough University, where I earned a BSc in Computer Science and
-          Artificial Intelligence. I'm currently working as a Software Engineer
-          at
+          Encouraged my Maths teacher due to being the top maths student in my
+          high school, my journey in software began in 2013 when I built my
+          first website - a hub for my self-made digital graphics, music, and
+          modded flash games. And I've been programming ever since. I pursued
+          Creative Media Production for Games Design in college, where I
+          developed skills in art, programming, 3D modelling, music production,
+          design, and storytelling, ultimately cementing my passion for Software
+          Engineering.
         </PAbout>
-        <PHAbout> The Access Group</PHAbout>
-        <PAbout>.</PAbout>
         <br />
         <br />
         <PAbout>
-          Whilst not coding I enjoy volunteering for my charity, practising
-          martial arts, and thinking I look super cool playing
+          I'm a graduate of Loughborough University, where I earned a BSc in
+        </PAbout>
+        <PHAbout> Computer Science and Artificial Intelligence. </PHAbout>
+        <PAbout>
+          During my time there I found that I was a great web developer, earning
+          the top mark of the university of 97 in Web Programming.
+        </PAbout>
+        <br />
+        <br />
+        <PAbout>I'm currently working as a Full-Stack Engineer at</PAbout>
+        <PHAbout> The Access Group</PHAbout>
+        <PAbout>
+          . I manage the Employee Performance suite, and I act as a
+          CyberSecurity champion in the company, maintaining a flawless record.
+        </PAbout>
+        <br />
+        <br />
+        <PAbout>
+          Outside of programming, I am a trustee for a charity, practice martial
+          arts, and enjoy losing myself in
         </PAbout>
         <PHAbout> Beat Saber</PHAbout>
-        <PAbout>.</PAbout>
+        <PAbout>, where I definitely look as cool as I feel.</PAbout>
       </div>
     </div>
   );

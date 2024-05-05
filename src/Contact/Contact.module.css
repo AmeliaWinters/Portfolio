@@ -1,9 +1,10 @@
 .container {
-  padding: 2rem 10rem;
+  padding: 2rem 15rem;
   background-color: rgba(20, 20, 20, 0.95);
   color: white;
   font-family: "Roboto", sans-serif;
   display: flex;
+  flex-direction: column;
 }
 
 .title {
