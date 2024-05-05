@@ -70,7 +70,11 @@ export const ChatWindow = () => {
       <div className={styles.chatWindow}>
         <div className={styles.messages} ref={messagesEndRef}>
           {messages.map((msg, index) => (
-            <ChatMessage msg={msg} type={index === messages.length - 1} />
+            <ChatMessage
+              msg={msg}
+              type={index === messages.length - 1}
+              key={`ChatMsg ${index}`}
+            />
           ))}
           {isTyping && <Typing />}
         </div>
