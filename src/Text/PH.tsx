@@ -9,6 +9,7 @@ interface IProps {
 const baseStyle: CSSProperties = {
   fontFamily: '"coolvetica", sans-serif',
   color: "#fe6b86",
+  display: "inline",
 };
 
 const PH = ({ children, className, style }: IProps) => {

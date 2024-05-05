@@ -3,6 +3,11 @@
   src: url("./Assets/Fonts/coolvetica rg.otf") format("opentype");
 }
 
+@font-face {
+  font-family: "thesignature";
+  src: url("./Assets/Fonts/Thesignature.otf") format("opentype");
+}
+
 :root {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
@@ -29,7 +34,8 @@ code {
 
 a {
   font-weight: 500;
-  color: #fe6b86;
+  color: white;
+  cursor: none;
   text-decoration: inherit;
 }
 a:hover {

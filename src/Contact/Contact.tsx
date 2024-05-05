@@ -1,78 +1,44 @@
-import { useState } from "react";
 import styles from "./Contact.module.css";
 import P from "../Text/P";
 import sharedStyles from "../sharedStyles.module.css";
-
-interface EmailForm {
-  name: string;
-  email: string;
-  message: string;
-}
+import { ContactForm } from "./ContactForm";
+import PH from "../Text/PH";
+import H1 from "../Text/H1";
+import H3 from "../Text/H3";
 
 const Contact = () => {
-  const [formData, setFormData] = useState<EmailForm>({
-    name: "",
-    email: "",
-    message: "",
-  });
-
-  const handleChange = (
-    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
-  ) => {
-    setFormData({
-      ...formData,
-      [e.target.name]: e.target.value,
-    });
-  };
-
-  const handleSubmit = () => {
-    console.log("Sending form data...", formData);
-  };
-
   return (
     <section className={styles.container}>
+      <ContactForm />
       <div className={sharedStyles.flexColumnWidthFillAvailable}>
-        <div
-          style={{
-            display: "flex",
-            flexDirection: "column",
-            marginBottom: "4rem",
-          }}
-        >
-          <div className={styles.title}>Contact Me</div>
-          <P style={{ margin: "0" }}>Let's Talk</P>
+        <div className={styles.contactCard}>
+          <H1 style={{ margin: 0 }}>Amelia Winters</H1>
+          <H3 style={{ color: "#fe6b86" }}>Full-Stack Engineer</H3>
+          <br />
+          <div style={{ marginBottom: "0.5rem" }}>
+            <PH style={{ marginRight: "1rem" }}>Residence:</PH>
+            <P>Leicestershire, England</P>
+          </div>
+          <div style={{ marginBottom: "0.5rem" }}>
+            <PH style={{ marginRight: "1rem" }}>LinkedIn: </PH>
+            <P>
+              <a href="https://www.linkedin.com/in/ameliadev/" target="_blank">
+                linkedin.com/in/ameliadev
+              </a>
+            </P>
+          </div>
+          <div>
+            <PH style={{ marginRight: "1rem" }}>Email: </PH>
+            <P>AmeliaWintersDev@gmail.com</P>
+          </div>
+          <br />
+          <br />
+          <br />
+          <H1 style={{ fontFamily: "thesignature, sans-serif" }}>
+            Amelia Winters
+          </H1>
         </div>
-
-        <input
-          type="text"
-          name="name"
-          value={formData.name}
-          onChange={handleChange}
-          placeholder="Your Name"
-          className={styles.input}
-        />
-        <input
-          type="email"
-          name="email"
-          value={formData.email}
-          onChange={handleChange}
-          placeholder="Your Email"
-          className={styles.input}
-        />
-        <textarea
-          name="message"
-          rows={5}
-          value={formData.message}
-          onChange={handleChange}
-          placeholder="Your Message"
-          className={styles.textarea}
-        />
-        <br />
-        <button onClick={() => handleSubmit()} className={styles.button}>
-          Send
-        </button>
       </div>
-      <div className={sharedStyles.flexColumnWidthFillAvailable}></div>
     </section>
   );
 };

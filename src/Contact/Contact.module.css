@@ -8,7 +8,7 @@
 
 .title {
   font-family: "coolvetica", sans-serif;
-  color: #e73c7e;
+  color: #fe6b86;
   letter-spacing: 4px;
   font-size: 3rem;
 }
@@ -29,7 +29,7 @@
   padding: 20px;
   margin-top: 1rem;
   background-color: #222;
-  border: 2px solid #e73c7e;
+  border: 2px solid #fe6b86;
   border-radius: 20px;
   color: white;
   transition: background-color 0.3s ease;
@@ -41,7 +41,7 @@
 }
 
 .button {
-  background-color: #e73c7e;
+  background-color: #fe6b86;
   color: white;
   border: none;
   padding: 10px 20px;
@@ -53,4 +53,12 @@
 
 .button:hover {
   background-color: #cc3366;
+}
+
+.contactCard {
+  width: fit-content;
+  padding: 2rem 8rem 2rem 2rem;
+  margin: auto;
+  border: 3px solid #fe6b86;
+  border-radius: 50px;
 }

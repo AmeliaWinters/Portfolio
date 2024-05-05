@@ -12,10 +12,10 @@ export const WIP = () => {
         fontSize: "1rem",
         color: "white",
         mixBlendMode: "difference",
-        pointerEvents: 'none',
+        pointerEvents: "none",
       }}
     >
-      <P style={{ textAlign: "center" }}>Work in progress</P>
+      <P style={{ textAlign: "center", display: "block" }}>Work in progress</P>
     </div>
   );
 };
