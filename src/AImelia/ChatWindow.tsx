@@ -4,7 +4,6 @@ import { ChatInput } from "./ChatInput";
 import { ChatMessage } from "./ChatMessage";
 import styles from "./AImelia.module.css";
 import Typing from "./Typing";
-import Typewriter from "./Typewriter";
 
 export const apiUrl =
   "https://6wn4toerma.execute-api.eu-north-1.amazonaws.com/staging";

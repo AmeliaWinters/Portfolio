@@ -21,6 +21,7 @@
 
 .input,
 .textarea {
+  cursor: none;
   width: 100%;
   width: -moz-available;
   width: -webkit-fill-available;
@@ -46,6 +47,7 @@
   padding: 10px 20px;
   margin-left: auto;
   margin-top: 1rem;
+  cursor: none;
   transition: background-color 0.3s ease;
 }
 
