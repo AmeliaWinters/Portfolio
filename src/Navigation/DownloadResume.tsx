@@ -10,7 +10,7 @@ const DownloadResume = () => {
   };
 
   return (
-    <div onClick={handleDownload} style={{ cursor: "pointer" }}>
+    <div onClick={handleDownload}>
       <P>Download Resume</P>
     </div>
   );
