@@ -5,6 +5,7 @@ import EmployeePerformance from "../Assets/Images/EmployeePerformance.jpeg";
 import GoalsAndObjectives from "../Assets/Images/G&O.jpeg";
 import PathToGreat from "../Assets/Images/PtG.jpeg";
 import WeddingVenue from "../Assets/Images/WeddingVenue.png";
+import Kryptos from "../Assets/Images/Kryptos.png";
 import H1 from "../Text/H1";
 import { ProjectBox } from "./ProjectBox";
 
@@ -16,6 +17,13 @@ export interface IProject {
 }
 
 const projects: IProject[] = [
+  {
+    name: "Kryptos Code Decoder",
+    technologies: ["Python", "Parallel Computing", "Cryptography"],
+    imageUrl: Kryptos,
+    description:
+      "A program that decodes the Kryptos sculpture's unsolved codes.",
+  },
   {
     name: "Portfolio",
     technologies: ["React", "TypeScript", "JavaScript", "Node.js", "AWS"],
