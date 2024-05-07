@@ -16,7 +16,7 @@ export const AIMelia = () => {
 
   useEffect(() => {
     const handleScroll = () => {
-      if (window.scrollY > 100) {
+      if (window.scrollY > 300) {
         setIsHintVisible(false);
       }
     };
@@ -42,7 +42,7 @@ export const AIMelia = () => {
       <div style={{ display: "flex" }}>
         {!isOpen && isHintVisible && (
           <div className={styles.calloutLabel}>
-            <span>...or Ask AI-melia!</span>
+            <span>Ask my assistant AI-melia about me!</span>
             <ArrowIcon />
           </div>
         )}

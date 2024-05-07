@@ -4,12 +4,13 @@ import sharedStyles from "../sharedStyles.module.css";
 import PH from "../Text/PH";
 import H1 from "../Text/H1";
 import H3 from "../Text/H3";
+import H2 from "../Text/H2";
 
 export const ContactCard = () => {
   return (
     <div className={sharedStyles.flexColumnWidthFillAvailable}>
       <div className={styles.contactCard}>
-        <H1 style={{ margin: 0 }}>Amelia Winters</H1>
+        <H2 style={{ margin: 0, fontSize: "2.5rem" }}>Amelia Winters</H2>
         <H3 style={{ color: "#fe6b86" }}>Full-Stack Engineer</H3>
         <br />
         <div style={{ marginBottom: "0.5rem" }}>

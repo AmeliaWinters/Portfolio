@@ -1,13 +1,21 @@
 import { CSSProperties } from "react";
 
 interface IProps {
-  children: string;
+  children:
+    | JSX.Element
+    | string
+    | JSX.Element[]
+    | string[]
+    | number
+    | number[]
+    | null
+    | undefined;
   className?: string;
   style?: CSSProperties;
 }
 
 const baseStyle: CSSProperties = {
-  fontFamily: '"coolvetica", sans-serif',
+  fontFamily: '"roboto mono", sans-serif',
   color: "#fe6b86",
   display: "inline",
 };

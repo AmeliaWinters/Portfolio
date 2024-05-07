@@ -15,8 +15,10 @@ interface IProps {
 }
 
 const baseStyle: CSSProperties = {
-  fontFamily: '"coolvetica", sans-serif',
+  fontFamily: '"roboto mono", sans-serif',
   display: "inline",
+  marginTop: 0,
+  marginBottom: 0,
 };
 
 const P = ({ children, className, style }: IProps) => {

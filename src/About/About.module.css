@@ -1,13 +1,10 @@
 .aboutContainer {
-  padding: 10rem;
-  border-radius: 1rem 1rem 0 0;
+  padding: 6rem;
+  border-radius: 2rem;
   display: flex;
-
   align-items: center;
   justify-content: center;
-  background: black;
-  opacity: 90%;
-  color: white;
+  background-color: rgba(10, 10, 10, 0.95);
   box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.19), 0 0rem 0.6rem rgba(0, 0, 0, 0.23);
   gap: 2rem;
   margin: auto;
@@ -17,6 +14,7 @@
   height: 15rem;
   width: 15rem;
   border-radius: 50%;
+  border: 5px solid #fe6b86;
   overflow: hidden;
   box-shadow: 0 0.4rem 0.8rem rgba(0, 0, 0, 0.1);
 }
@@ -34,9 +32,8 @@
 .bio {
   width: 70%;
   padding: 2rem;
-  background: rgba(255, 255, 255, 0.8);
-  border-radius: 8px;
-  color: #333;
+  border: 3px solid #fe6b86;
+  border-radius: 2rem;
 }
 
 .bioHeader {
@@ -49,6 +46,7 @@
   text-align: justify;
   font-size: 1.3rem;
   display: inline;
+  color: white;
 }
 
 /* Mobile */

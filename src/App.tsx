@@ -11,6 +11,7 @@ import useWindowSize from "./useWindowSize";
 import ScrollHint from "./Greeting/ScrollHint";
 import Projects from "./Projects/Projects";
 import Contact from "./Contact/Contact";
+import Skills from "./Skills/Skills";
 
 const App: FC = () => {
   const { isMobile } = useWindowSize();
@@ -76,6 +77,7 @@ const App: FC = () => {
       <Greeting />
       <About />
       <Projects />
+      <Skills />
       <Contact />
       <AIMelia />
       {!isMobile && <Links />}

@@ -15,15 +15,15 @@ interface IProps {
 }
 
 const baseStyle: CSSProperties = {
-  fontFamily: '"roboto mono", sans-serif',
+  fontFamily: '"Roboto mono", sans-serif',
 };
 
-const H3 = ({ children, className, style }: IProps) => {
+const H2 = ({ children, className, style }: IProps) => {
   return (
-    <h3 style={{ ...baseStyle, ...style }} className={className}>
+    <h2 style={{ ...baseStyle, ...style }} className={className}>
       {children}
-    </h3>
+    </h2>
   );
 };
 
-export default H3;
+export default H2;

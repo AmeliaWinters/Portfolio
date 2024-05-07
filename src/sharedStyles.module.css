@@ -33,3 +33,25 @@
   height: -webkit-fill-available;
   height: fill-available;
 }
+
+.pinkHighLightUnderline {
+  position: relative;
+  z-index: 0;
+}
+
+.pinkHighLightUnderline:after {
+  transition: all 0.1s ease-in-out;
+  content: "";
+  position: absolute;
+  bottom: 13.5%;
+  z-index: -1;
+  height: 0.3em;
+  width: 104%;
+  left: -1%;
+  background: linear-gradient(
+    65deg,
+    #fe6b86 0%,
+    #da4b66 100%,
+    rgba(255, 209, 0, 0) 100%
+  );
+}

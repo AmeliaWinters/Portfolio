@@ -1,6 +1,6 @@
 .container {
   padding: 2rem 15rem;
-  background-color: rgba(20, 20, 20, 0.95);
+  background-color: rgba(10, 10, 10, 0.95);
   color: white;
   font-family: "Roboto", sans-serif;
   display: flex;
@@ -8,10 +8,8 @@
 }
 
 .title {
-  font-family: "coolvetica", sans-serif;
-  color: #fe6b86;
-  letter-spacing: 4px;
-  font-size: 3rem;
+  font-family: "Roboto ", sans-serif;
+  text-align: center;
 }
 
 .form {

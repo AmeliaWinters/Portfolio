@@ -20,6 +20,6 @@
     "noUnusedParameters": false,
     "noFallthroughCasesInSwitch": false
   },
-  "include": ["src", "src/Greeting", "src/App.tsx"],
+  "include": ["src", "src/Greeting", "src/App.tsx", "src/Assets/Icons/.tsx"],
   "references": [{ "path": "./tsconfig.node.json" }]
 }

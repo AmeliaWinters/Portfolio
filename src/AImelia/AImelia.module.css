@@ -179,7 +179,6 @@
   border-radius: 10px;
   padding: 10px;
   margin-left: auto;
-  cursor: pointer;
   color: #fff;
 }
 
@@ -193,10 +192,19 @@
 }
 
 .chatButton {
-  background: linear-gradient(135deg, #303f9f, #1976d2);
+  outline: 3px solid white;
+  background: none;
   width: 4rem;
   margin-left: auto;
   margin-top: 0.5rem;
+}
+
+.chatButton:hover {
+  outline: 3px solid #cf99a6;
+}
+
+.chatButton:hover path:nth-child(2) {
+  fill: #cf99a6;
 }
 
 @media (max-width: 768px) {

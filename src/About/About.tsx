@@ -19,7 +19,9 @@ const About = () => {
         />
       </div>
       <div className={styles.bio}>
-        <H1 style={{ color: "#fe6b86" }}>About Me</H1>
+        <H1 style={{ color: "white" }} underline>
+          About Me
+        </H1>
         <PAbout>Hiya!</PAbout>
         <br />
         <PAbout>

@@ -1,19 +1,25 @@
 import { CSSProperties } from "react";
+import sharedStyles from "../sharedStyles.module.css";
 
 interface IProps {
-  children: string;
+  children: JSX.Element | string;
   className?: string;
   style?: CSSProperties;
+  underline?: boolean;
 }
 
 const baseStyle: CSSProperties = {
-  fontFamily: '"coolvetica", sans-serif',
+  fontFamily: '"Roboto mono", sans-serif',
 };
 
-const H1 = ({ children, className, style }: IProps) => {
+const H1 = ({ children, className, style, underline }: IProps) => {
   return (
     <h1 style={{ ...baseStyle, ...style }} className={className}>
-      {children}
+      {underline ? (
+        <span className={sharedStyles.pinkHighLightUnderline}>{children}</span>
+      ) : (
+        children
+      )}
     </h1>
   );
 };
