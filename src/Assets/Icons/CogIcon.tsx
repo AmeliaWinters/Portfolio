@@ -7,13 +7,13 @@ const CogIcon: React.FC<React.SVGProps<SVGSVGElement>> = (props) => {
       width="800px"
       height="800px"
       viewBox="0 0 65 65"
-      enable-background="new 0 0 65 65"
+      enableBackground="new 0 0 65 65"
       {...props}
     >
       <path
         fill="none"
         stroke={props.style?.fill || "white"}
-        stroke-width="3"
+        strokeWidth="3"
         d="M60,25H49.75h3.45
 			c-0.5-1.9-1.3-3.8-2.3-5.5l-2.169,2.169L55.7,14.7c0.8-0.8,0.8-2,0-2.8L50,6.2c-0.8-0.8-2-0.8-2.8,0l-7.062,7.063L42.4,11
 			c-1.7-1-3.5-1.7-5.5-2.3V12V2c0-1.1-0.9-2-2-2h-8c-1.1,0-2,0.9-2,2v10V8.8c-1.9,0.5-3.8,1.3-5.5,2.3l2.344,2.344L14.6,6.3
@@ -26,7 +26,7 @@ const CogIcon: React.FC<React.SVGProps<SVGSVGElement>> = (props) => {
       <circle
         fill="none"
         stroke={props.style?.fill || "white"}
-        stroke-width="3"
+        strokeWidth="3"
         cx="31"
         cy="31"
         r="10"

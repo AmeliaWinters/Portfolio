@@ -17,7 +17,6 @@ const Contact = () => {
       <div
         style={{
           display: "flex",
-
           marginTop: "4rem",
         }}
       >

@@ -1,11 +1,11 @@
 import { useEffect, useRef, useState } from "react";
 import styles from "./Projects.module.css";
 import Portfolio from "../Assets/Images/Portfolio.png";
-import EmployeePerformance from "../Assets/Images/EmployeePerformance.jpeg";
-import GoalsAndObjectives from "../Assets/Images/G&O.jpeg";
-import PathToGreat from "../Assets/Images/PtG.jpeg";
+import EmployeePerformance from "../Assets/Images/EmployeePerformance.jpg";
+import GoalsAndObjectives from "../Assets/Images/G&O.jpg";
+import PathToGreat from "../Assets/Images/PtG.jpg";
 import WeddingVenue from "../Assets/Images/WeddingVenue.png";
-import Kryptos from "../Assets/Images/Kryptos.png";
+import Kryptos from "../Assets/Images/Kryptos.jpg";
 import H1 from "../Text/H1";
 import { ProjectBox } from "./ProjectBox";
 
@@ -65,17 +65,8 @@ const Projects = () => {
   const [projectHovered, setProjectHovered] = useState<IProject>();
   const projectToShow = projectHovered || projectInCenter;
 
-  const imageRef = useRef<HTMLDivElement>(null);
   const projectsRef = useRef<HTMLDivElement>(null);
   const containerRef = useRef<HTMLDivElement | null>(null);
-
-  useEffect(() => {
-    if (imageRef.current && projectsRef.current) {
-      const projectRefStyle = window.getComputedStyle(projectsRef.current);
-      imageRef.current.style.height = projectRefStyle.height;
-      imageRef.current.style.width = projectRefStyle.width;
-    }
-  }, [imageRef.current?.style.height]);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -116,7 +107,7 @@ const Projects = () => {
       </H1>
       <div className={styles.projectsPage}>
         <div className={styles.projectsLeft}>
-          <div className={styles.projectImage} ref={imageRef}>
+          <div className={styles.projectImage}>
             {projects.map((project) => (
               <img
                 key={project.name}

@@ -14,9 +14,9 @@ const MonitorIcon: React.FC<React.SVGProps<SVGSVGElement>> = (props) => {
         transform="translate(-2 -2)"
         fill="none"
         stroke={props.style?.fill || "white"}
-        stroke-linecap="round"
-        stroke-linejoin="round"
-        stroke-width="2"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        strokeWidth="2"
       />
     </svg>
   );

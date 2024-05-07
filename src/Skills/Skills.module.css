@@ -1,5 +1,5 @@
 .skillsSection {
-  border-radius: 2rem 2rem 0 0;
+  border-radius: 0rem 2rem 0 0;
   padding: 2rem 2rem 10rem 2rem;
   background-color: rgba(10, 10, 10, 0.95);
 }
@@ -11,8 +11,7 @@
 
 .skillsContainer {
   display: flex;
-  justify-content: space-between;
-  padding: 0 22rem;
+  justify-content: center;
 }
 
 .skillBox {
@@ -20,6 +19,7 @@
   padding: 2rem 2rem 3rem 2rem;
   border: 3px solid #fe6b86;
   border-left: none;
+  max-width: 20rem;
 }
 
 .skillBox:first-child {

@@ -10,6 +10,18 @@ import TypeScriptIcon from "../Assets/Icons/TypeScriptIcon";
 import JavaScriptIcon from "../Assets/Icons/JavaScriptIcon";
 import JestIcon from "../Assets/Icons/JestIcon";
 import VueIcon from "../Assets/Icons/VueIcon";
+import ASPNetIcon from "../Assets/Icons/ASPNetIcon";
+import CSharpIcon from "../Assets/Icons/CSharpIcon";
+import NodeJsIcon from "../Assets/Icons/NodeJsIcon";
+import GraphQLIcon from "../Assets/Icons/GraphQLIcon";
+import RESTAPIIcon from "../Assets/Icons/RESTAPIIcon";
+import SQLIcon from "../Assets/Icons/SQLIcon";
+import AzureIcon from "../Assets/Icons/AzureIcon";
+import AWSIcon from "../Assets/Icons/AWSIcon";
+import CICDIcon from "../Assets/Icons/CICDIcon";
+import TDDIcon from "../Assets/Icons/TDDIcon";
+import GitIcon from "../Assets/Icons/GitIcon";
+import PythonIcon from "../Assets/Icons/PythonIcon";
 
 interface ISkill {
   text: string;
@@ -19,31 +31,31 @@ interface ISkill {
 const iconStyle = { fill: "white", width: "28px", height: "28px" };
 
 const frontEndSkills: ISkill[] = [
-  {
-    text: "React",
-    icon: <ReactIcon style={iconStyle} />,
-  },
-  {
-    text: "Redux",
-    icon: <ReduxIcon style={iconStyle} />,
-  },
+  { text: "React", icon: <ReactIcon style={iconStyle} /> },
+  { text: "Redux", icon: <ReduxIcon style={iconStyle} /> },
   { text: "TypeScript", icon: <TypeScriptIcon style={iconStyle} /> },
   { text: "Jest", icon: <JestIcon style={iconStyle} /> },
   { text: "JavaScript", icon: <JavaScriptIcon style={iconStyle} /> },
-
   { text: "Vue", icon: <VueIcon style={iconStyle} /> },
 ];
 
-const backEndSkills = [
-  "C#",
-  "ASP.NET",
-  "Node.js",
-  "GraphQL",
-  "REST APIs",
-  "SQL",
+const backEndSkills: ISkill[] = [
+  { text: "C#", icon: <CSharpIcon style={iconStyle} /> },
+  { text: "ASP.NET", icon: <ASPNetIcon style={iconStyle} /> },
+  { text: "Node.js", icon: <NodeJsIcon style={iconStyle} /> },
+  { text: "GraphQL", icon: <GraphQLIcon style={iconStyle} /> },
+  { text: "REST APIs", icon: <RESTAPIIcon style={iconStyle} /> },
+  { text: "SQL", icon: <SQLIcon style={iconStyle} /> },
 ];
 
-const softwareDevSkills = ["Azure", "AWS", "CI/CD", "TDD", "Git", "Python"];
+const softwareDevSkills: ISkill[] = [
+  { text: "Azure", icon: <AzureIcon style={iconStyle} /> },
+  { text: "AWS", icon: <AWSIcon style={iconStyle} /> },
+  { text: "CI/CD", icon: <CICDIcon style={iconStyle} /> },
+  { text: "TDD", icon: <TDDIcon style={iconStyle} /> },
+  { text: "Git", icon: <GitIcon style={iconStyle} /> },
+  { text: "Python", icon: <PythonIcon style={iconStyle} /> },
+];
 
 const Skills = () => {
   return (
@@ -63,7 +75,7 @@ const Skills = () => {
           </div>
           <ul className={styles.skillsList}>
             {frontEndSkills.map((skill) => (
-              <SkillChip text={skill.text} Icon={skill.icon} />
+              <SkillChip key={skill.text} text={skill.text} Icon={skill.icon} />
             ))}
           </ul>
         </div>
@@ -78,7 +90,7 @@ const Skills = () => {
           </div>
           <ul className={styles.skillsList}>
             {backEndSkills.map((skill) => (
-              <SkillChip text={skill} />
+              <SkillChip key={skill.text} text={skill.text} Icon={skill.icon} />
             ))}
           </ul>
         </div>
@@ -98,7 +110,7 @@ const Skills = () => {
           </div>
           <ul className={styles.skillsList}>
             {softwareDevSkills.map((skill) => (
-              <SkillChip text={skill} />
+              <SkillChip key={skill.text} text={skill.text} Icon={skill.icon} />
             ))}
           </ul>
         </div>
