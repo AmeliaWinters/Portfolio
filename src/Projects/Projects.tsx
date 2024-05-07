@@ -18,7 +18,7 @@ export interface IProject {
 
 const projects: IProject[] = [
   {
-    name: "Kryptos Code Decoder",
+    name: "Kryptos Code Parallel Decipherer",
     technologies: ["Python", "Parallel Computing", "Cryptography"],
     imageUrl: Kryptos,
     description:

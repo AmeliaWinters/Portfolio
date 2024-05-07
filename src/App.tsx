@@ -82,6 +82,11 @@ const App: FC = () => {
       <ScrollHint />
       <WIP />
       <div className={styles.ameliaCursor} />
+      {/* TODO: 
+      Interactive Resume 
+      Copyright
+      Code Snippet Formatter 
+      Skills section */}
     </div>
   );
 };
