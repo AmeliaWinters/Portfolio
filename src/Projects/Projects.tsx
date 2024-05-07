@@ -96,7 +96,7 @@ const Projects = () => {
   }, []);
 
   return (
-    <div ref={containerRef}>
+    <div ref={containerRef} id="projects">
       <H1
         style={{
           textAlign: "center",

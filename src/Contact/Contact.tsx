@@ -6,7 +6,7 @@ import { ContactForm } from "./ContactForm";
 
 const Contact = () => {
   return (
-    <section className={styles.container}>
+    <section className={styles.container} id="contact">
       <H1 className={styles.title} underline>
         Contact Me
       </H1>

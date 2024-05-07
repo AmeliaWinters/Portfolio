@@ -59,7 +59,7 @@ const softwareDevSkills: ISkill[] = [
 
 const Skills = () => {
   return (
-    <section className={styles.skillsSection}>
+    <section className={styles.skillsSection} id="skills">
       <H1 className={styles.mainHeading} underline>
         Skills and Expertise
       </H1>
