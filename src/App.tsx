@@ -13,7 +13,6 @@ import Projects from "./Projects/Projects";
 import Contact from "./Contact/Contact";
 import Skills from "./Skills/Skills";
 import Greeting from "./Landing/Greeting";
-import { PageOverlay } from "./Landing/PageOverlay";
 
 const App: FC = () => {
   const { isMobile } = useWindowSize();
