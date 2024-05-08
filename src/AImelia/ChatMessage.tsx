@@ -1,7 +1,7 @@
 import AImelia from "../Assets/Images/AI-melia.webp";
 import { IChatMessage } from "./AImelia";
 import styles from "./AImelia.module.css";
-import Typewriter from "./Typewriter";
+import Typewriter from "../Shared/Typewriter";
 
 interface IProps {
   msg: IChatMessage;

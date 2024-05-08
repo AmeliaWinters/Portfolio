@@ -1,4 +1,4 @@
-import styles from "./Greeting.module.css";
+import styles from "./Landing.module.css";
 
 export const Background = () => {
   return (

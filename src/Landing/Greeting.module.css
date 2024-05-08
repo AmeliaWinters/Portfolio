@@ -1,0 +1,23 @@
+.fullScreen {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(135deg, #f06, #ff69b4);
+  z-index: 1000;
+  overflow: hidden;
+  color: white;
+  transition: background 1.5s ease-in-out, filter 1s ease-in-out;
+  pointer-events: none;
+}
+
+.content,
+.hiya,
+.greeting {
+  opacity: 0;
+}

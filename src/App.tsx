@@ -2,17 +2,18 @@ import { FC, useEffect } from "react";
 import Navigation from "./Navigation/Navigation";
 import { AIMelia } from "./AImelia/AImelia";
 import About from "./About/About";
-import { Background } from "./Greeting/Background";
-import Greeting from "./Greeting/Greeting";
+import { Background } from "./Landing/Background";
+import Landing from "./Landing/Landing";
 import { Links } from "./Links/Links";
 import { WIP } from "./WIP";
 import styles from "./App.module.css";
 import useWindowSize from "./useWindowSize";
-import ScrollHint from "./Greeting/ScrollHint";
+import ScrollHint from "./Landing/ScrollHint";
 import Projects from "./Projects/Projects";
 import Contact from "./Contact/Contact";
 import Skills from "./Skills/Skills";
-import Carousel from "./Carousel";
+import Greeting from "./Landing/Greeting";
+import { PageOverlay } from "./Landing/PageOverlay";
 
 const App: FC = () => {
   const { isMobile } = useWindowSize();
@@ -73,24 +74,24 @@ const App: FC = () => {
 
   return (
     <div>
-      <Navigation />
       <Background />
-      <Greeting />
-      <About />
-      <Projects />
-      <Skills />
-      <Contact />
+      <Greeting>
+        <Navigation />
+        <Landing />
+        <About />
+        <Projects />
+        <Skills />
+        <Contact />
 
-      <AIMelia />
-      {!isMobile && <Links />}
-      <ScrollHint />
-      <WIP />
-      <div className={styles.ameliaCursor} />
-      {/* TODO: 
-      Interactive Resume 
-      Copyright
-      Code Snippet Formatter 
-      Skills section */}
+        <AIMelia />
+        {!isMobile && <Links />}
+        <ScrollHint />
+        <WIP />
+        <div className={styles.ameliaCursor} />
+        {/* TODO: 
+      Experience Timeline
+      Copyright*/}
+      </Greeting>
     </div>
   );
 };

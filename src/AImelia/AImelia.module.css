@@ -197,6 +197,18 @@
   width: 4rem;
   margin-left: auto;
   margin-top: 0.5rem;
+  animation: fadeInAndPopFromBelow 3s ease-out forwards;
+}
+
+@keyframes fadeInAndPopFromBelow {
+  from {
+    opacity: 0;
+    transform: translateY(100%);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 .chatButton:hover {
@@ -223,6 +235,7 @@
   padding: 8px;
   cursor: pointer;
   margin-right: 1rem;
+  animation: fadeInAndPopFromBelow 3s ease-out forwards;
 }
 
 .calloutLabel span {

@@ -3,9 +3,10 @@ import { useState, useEffect } from "react";
 interface IProps {
   msg: string;
   speed?: number;
+  onFinish?: () => void;
 }
 
-const Typewriter = ({ msg, speed = 100 }: IProps) => {
+const Typewriter = ({ msg, speed = 100, onFinish }: IProps) => {
   const [displayedText, setDisplayedText] = useState("");
 
   useEffect(() => {
@@ -14,13 +15,19 @@ const Typewriter = ({ msg, speed = 100 }: IProps) => {
         setDisplayedText(msg.substring(0, displayedText.length + 1));
       }, speed);
       return () => clearTimeout(timeoutId);
+    } else {
+      onFinish && onFinish();
     }
-  }, [displayedText, msg, speed]);
+  }, [displayedText, speed]);
+
+  useEffect(() => {
+    setDisplayedText("");
+  }, [msg]);
 
   return (
-    <p>
-      {displayedText} <span className="typewriter-cursor" />
-    </p>
+    <>
+      {displayedText} <span />
+    </>
   );
 };
 
