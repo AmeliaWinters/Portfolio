@@ -1,5 +1,5 @@
 import styles from "./Landing.module.css";
-import Ame liaImage from "../Assets/Images/AmeliaHi.png";
+import AmeliaImage from "../Assets/Images/AmeliaHi.png";
 import ScrollingText from "./ScrollingText";
 import { useState } from "react";
 
