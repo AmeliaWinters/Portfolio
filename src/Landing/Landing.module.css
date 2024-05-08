@@ -68,10 +68,6 @@
   -ms-user-select: none;
 }
 
-.centralImage:hover {
-  transform: scale(1.1);
-}
-
 @keyframes popAndRise {
   0% {
     transform: translateY(100vh) scale(0.5);

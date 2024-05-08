@@ -1,13 +1,22 @@
 import styles from "./Landing.module.css";
-import personImage from "../Assets/Images/AmeliaHi.png";
+import AmeliaImage from "../Assets/Images/AmeliaHi.png";
 import ScrollingText from "./ScrollingText";
+import { useState } from "react";
 
 const Landing = () => {
+  const [isImageVisible, setIsImageVisible] = useState(false);
+
   return (
     <div className={styles.pageContainer}>
       <ScrollingText text="Amelia Winters " />
-      <img src={personImage} alt="Amelia" className={styles.centralImage} />
 
+      <img
+        onLoad={() => setIsImageVisible(true)}
+        src={AmeliaImage}
+        alt="Amelia"
+        className={isImageVisible ? styles.centralImage : ""}
+        style={{ opacity: isImageVisible ? 0 : 1 }}
+      />
     </div>
   );
 };
