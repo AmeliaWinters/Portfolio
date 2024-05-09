@@ -233,7 +233,6 @@
   color: white;
   border-radius: 8px;
   padding: 8px;
-  cursor: pointer;
   margin-right: 1rem;
   animation: fadeInAndPopFromBelow 3s ease-out forwards;
 }

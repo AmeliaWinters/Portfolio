@@ -1,4 +1,4 @@
-import { FC, useEffect } from "react";
+import { FC, useEffect, useRef } from "react";
 import Navigation from "./Navigation/Navigation";
 import { AIMelia } from "./AImelia/AImelia";
 import About from "./About/About";
@@ -16,15 +16,14 @@ import Greeting from "./Landing/Greeting";
 
 const App: FC = () => {
   const { isMobile } = useWindowSize();
+  const cursor = useRef<HTMLElement | null>(null);
 
   useEffect(() => {
-    const cursor: HTMLElement | null = document.querySelector(
-      `.${styles.ameliaCursor}`
-    );
     const handleMouseMove = (event: { clientX: any; clientY: any }) => {
-      if (cursor) {
-        cursor.style.left = `${event.clientX}px`;
-        cursor.style.top = `${event.clientY}px`;
+      console.log(cursor.current);
+      if (cursor.current) {
+        cursor.current.style.left = `${event.clientX}px`;
+        cursor.current.style.top = `${event.clientY}px`;
       }
 
       const trail = document.createElement("div");
@@ -43,21 +42,21 @@ const App: FC = () => {
     };
 
     const addEffects = () => {
-      if (!cursor) return;
-      cursor.classList.add(styles.clickEffect);
+      if (!cursor.current) return;
+      cursor.current.classList.add(styles.clickEffect);
       setTimeout(() => {
-        cursor.classList.remove(styles.clickEffect);
+        cursor.current?.classList.remove(styles.clickEffect);
       }, 200);
     };
 
     const onMouseDown = () => {
-      if (!cursor) return;
-      cursor.classList.add(styles.clickEffect);
+      if (!cursor.current) return;
+      cursor.current.classList.add(styles.clickEffect);
     };
 
     const onMouseUp = () => {
-      if (!cursor) return;
-      cursor.classList.remove(styles.clickEffect);
+      if (!cursor.current) return;
+      cursor.current.classList.remove(styles.clickEffect);
     };
 
     document.addEventListener("mousemove", handleMouseMove);
@@ -66,14 +65,20 @@ const App: FC = () => {
     document.addEventListener("mouseup", onMouseUp);
 
     return () => {
-      document.removeEventListener("mousemove", handleMouseMove);
-      document.removeEventListener("click", addEffects);
+      document.addEventListener("mousemove", handleMouseMove);
+      document.addEventListener("click", addEffects);
+      document.addEventListener("mousedown", onMouseDown);
+      document.addEventListener("mouseup", onMouseUp);
     };
   }, []);
 
   return (
     <div>
       <Background />
+      <div
+        className={styles.ameliaCursor}
+        ref={(el) => (cursor.current = el)}
+      />
       <Greeting>
         <Navigation />
         <Landing />
@@ -86,7 +91,7 @@ const App: FC = () => {
         {!isMobile && <Links />}
         <ScrollHint />
         <WIP />
-        <div className={styles.ameliaCursor} />
+
         {/* TODO: 
       Experience Timeline
       Copyright*/}

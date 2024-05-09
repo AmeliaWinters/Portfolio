@@ -18,29 +18,29 @@
   width: fill-available;
 }
 
-.projectsList div:first-child .projectItem {
-  border-top-left-radius: 20px;
-}
-
-.projectsList div:last-child .projectItem {
-  border-bottom-left-radius: 20px;
-}
-
 .projectItem {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  width: -moz-available;
+  width: -webkit-fill-available;
+  width: fill-available;
+
+  transition: all 0.3s ease-in-out;
+}
+
+.projectItemInner {
+  padding: 1rem 1.5rem;
+  border-radius: 10px;
+  color: white;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+  outline: 2px solid rgba(10, 10, 10, 0.1);
+}
+
+.projectItemTop {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  margin: 10px 20px 10px 5px;
-  padding: 1rem 1.5rem;
-  border-radius: 10px;
-  background: linear-gradient(
-    145deg,
-    rgba(35, 166, 213, 0.1) 0%,
-    rgba(231, 60, 126, 0.1) 100%
-  );
-  color: white;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
-  transition: all 0.3s ease-in-out;
 }
 
 .projectItem h3 {

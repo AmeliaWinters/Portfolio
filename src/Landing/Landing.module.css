@@ -92,6 +92,7 @@
   mix-blend-mode: overlay;
   overflow: hidden;
   z-index: 1;
+  animation: fadeIn 3s ease-out forwards;
 }
 
 .scrollingText {
@@ -100,7 +101,7 @@
   color: #000;
   z-index: 2;
   font-family: "coolvetica", sans-serif;
-  animation: fadeIn 3s ease-out forwards, scrollRightwards 3000s linear infinite;
+  animation: scrollRightwards 3000s linear infinite;
   user-select: none;
   -webkit-user-select: none;
   -moz-user-select: none;

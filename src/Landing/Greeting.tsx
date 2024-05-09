@@ -5,11 +5,17 @@ import gsap from "gsap";
 interface IProps {
   children: React.ReactNode;
 }
+const environment = import.meta.env.VITE_ENVIRONMENT;
 
 const Greeting: FC<IProps> = ({ children }) => {
   const [isGreeting, setIsGreeting] = useState(true);
 
   useEffect(() => {
+    if (environment === "dev") {
+      setIsGreeting(false); // Skip animation in development mode
+      return;
+    }
+
     const tl = gsap.timeline({
       defaults: { ease: "power3.out", duration: 2 },
       onComplete: () => setIsGreeting(false),
@@ -39,12 +45,14 @@ const Greeting: FC<IProps> = ({ children }) => {
 
   return (
     <>
-      <div className={styles.fullScreen}>
-        <h1 className={`${styles.hiya}`}>Hiya!</h1>
-        <h2 className={`${styles.greeting}`}>
-          I hope your day has been treating you well.
-        </h2>
-      </div>
+      {isGreeting && (
+        <div className={styles.fullScreen}>
+          <h1 className={`${styles.hiya}`}>Hiya!</h1>
+          <h2 className={`${styles.greeting}`}>
+            I hope your day has been treating you well.
+          </h2>
+        </div>
+      )}
 
       {!isGreeting && <div>{children}</div>}
     </>
