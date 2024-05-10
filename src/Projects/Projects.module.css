@@ -1,3 +1,9 @@
+.projectsContainer {
+  background: #150d0f;
+  padding-top: calc(100px + 2rem);
+  position: relative;
+}
+
 .projectsPage {
   display: flex;
   flex-direction: row;
@@ -5,9 +11,14 @@
   width: 100%;
   align-items: flex-start;
   padding: 2rem 0rem 0 0;
-  gap: 20px;
   overflow: hidden;
   align-items: center;
+}
+
+.projectsLeft {
+  position: relative;
+  min-width: 40vw;
+  height: 40vw;
 }
 
 .projectsList {
@@ -25,16 +36,14 @@
   width: -moz-available;
   width: -webkit-fill-available;
   width: fill-available;
-
   transition: all 0.3s ease-in-out;
+  padding: 1rem 1.5rem;
+  color: white;
+  border-bottom: 5px solid #f0f0f0;
 }
 
-.projectItemInner {
-  padding: 1rem 1.5rem;
-  border-radius: 10px;
-  color: white;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
-  outline: 2px solid rgba(10, 10, 10, 0.1);
+.projectItem:first-child {
+  border-top: 5px solid #f0f0f0;
 }
 
 .projectItemTop {
@@ -43,6 +52,17 @@
   justify-content: space-between;
 }
 
+.projectItemDescription {
+  overflow: hidden;
+  max-height: 0;
+  transition: max-height 1s ease-in-out, opacity 1s ease-in-out;
+  opacity: 0;
+}
+
+.projectItemDescriptionVisible {
+  max-height: 500px;
+  opacity: 1;
+}
 .projectItem h3 {
   font-size: 18px;
   font-weight: 600;
@@ -64,22 +84,18 @@
   width: 100%;
   height: 100%;
   overflow: hidden;
-  border-top-right-radius: 2rem;
+  border-top-right-radius: 1rem;
+  border-bottom-right-radius: 1rem;
   transition: opacity 1s ease-in-out;
 }
 
-.projectsLeft {
-  position: relative;
-  min-width: 40vw;
-  height: 40vw;
-}
-
-.parallaxEffect {
-  position: relative;
-  transition: transform 0.3s ease-in-out;
-  will-change: transform;
-}
-
-.parallaxVisible {
-  transform: translateY(-15px);
+@keyframes slideDown {
+  0% {
+    max-height: 0;
+    opacity: 0;
+  }
+  100% {
+    max-height: 500px;
+    opacity: 1;
+  }
 }

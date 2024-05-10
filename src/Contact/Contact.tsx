@@ -6,8 +6,8 @@ import { ContactForm } from "./ContactForm";
 
 const Contact = () => {
   return (
-    <section className={styles.container} id="contact">
-      <H1 className={styles.title} underline>
+    <div className={styles.container} id="contact">
+      <H1 className={styles.title} underlineColour="pink">
         Contact Me
       </H1>
       <P style={{ margin: "0", fontSize: "1.5rem", textAlign: "center" }}>
@@ -23,7 +23,7 @@ const Contact = () => {
         <ContactForm />
         <ContactCard />
       </div>
-    </section>
+    </div>
   );
 };
 

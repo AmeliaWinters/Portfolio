@@ -27,6 +27,6 @@
   .clickEffect {
     transform: translate(-50%, -50%) scale(1.3);
     background: radial-gradient(circle, #fe6b86, transparent);
-    transition: transform 0.2s ease;
+    transition: transform 0.1s ease;
   }
 }

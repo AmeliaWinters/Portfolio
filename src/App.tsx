@@ -46,7 +46,7 @@ const App: FC = () => {
       cursor.current.classList.add(styles.clickEffect);
       setTimeout(() => {
         cursor.current?.classList.remove(styles.clickEffect);
-      }, 200);
+      }, 100);
     };
 
     const onMouseDown = () => {

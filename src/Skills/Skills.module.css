@@ -1,7 +1,8 @@
 .skillsSection {
-  border-radius: 0rem 2rem 0 0;
   padding: 2rem 2rem 10rem 2rem;
-  background-color: rgba(10, 10, 10, 0.95);
+  background-color: #150d0f;
+  position: relative;
+  z-index: 1;
 }
 
 .mainHeading {

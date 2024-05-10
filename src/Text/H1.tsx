@@ -5,18 +5,27 @@ interface IProps {
   children: JSX.Element | string;
   className?: string;
   style?: CSSProperties;
-  underline?: boolean;
+  underlineColour?:
+    | "pink"
+    | "blue"
+    | "green"
+    | "yellow"
+    | "purple"
+    | "orange"
+    | "red";
 }
 
 const baseStyle: CSSProperties = {
   fontFamily: '"Roboto mono", sans-serif',
 };
 
-const H1 = ({ children, className, style, underline }: IProps) => {
+const H1 = ({ children, className, style, underlineColour }: IProps) => {
   return (
     <h1 style={{ ...baseStyle, ...style }} className={className}>
-      {underline ? (
-        <span className={sharedStyles.pinkHighLightUnderline}>{children}</span>
+      {underlineColour ? (
+        <span className={sharedStyles[`${underlineColour}Underline`]}>
+          {children}
+        </span>
       ) : (
         children
       )}

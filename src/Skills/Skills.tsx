@@ -59,8 +59,8 @@ const softwareDevSkills: ISkill[] = [
 
 const Skills = () => {
   return (
-    <section className={styles.skillsSection} id="skills">
-      <H1 className={styles.mainHeading} underline>
+    <div className={styles.skillsSection} id="skills">
+      <H1 className={styles.mainHeading} underlineColour="pink">
         Skills and Expertise
       </H1>
       <div className={styles.skillsContainer}>
@@ -115,7 +115,7 @@ const Skills = () => {
           </ul>
         </div>
       </div>
-    </section>
+    </div>
   );
 };
 

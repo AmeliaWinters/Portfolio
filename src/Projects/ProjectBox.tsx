@@ -1,10 +1,8 @@
 import { IProject } from "./Projects";
 import styles from "./Projects.module.css";
 import Chip from "../Shared/Chip";
-import H3 from "../Text/H3";
-import { FaChevronDown, FaChevronUp } from "react-icons/fa";
-import { useEffect, useState } from "react";
-import sharedStyles from "../sharedStyles.module.css";
+import H2 from "../Text/H2";
+import P from "../Text/P";
 
 interface IProps {
   project: IProject;
@@ -24,41 +22,37 @@ export const ProjectBox = ({
       className={styles.projectItem}
       onMouseEnter={() => onMouseEnter(project.imageUrl)}
       onMouseLeave={() => onMouseLeave("")}
-      style={{
-        transform: isSelected ? "scale(1.04)" : "none",
-      }}
     >
-      <div className={styles.projectItemInner}>
+      <div>
         <div className={styles.projectItemTop}>
-          <H3
-            style={{
-              color: "white",
-              display: "inline",
-            }}
-          >
+          <H2 style={{ color: "white", display: "inline", fontWeight: 1000 }}>
             {project.name}
-          </H3>
-          <div
-            style={{
-              display: "inline-flex",
-              flexWrap: "wrap",
-            }}
-          >
+          </H2>
+          <div style={{ display: "inline-flex", flexWrap: "wrap" }}>
             {project.technologies.map((tech) => (
               <Chip text={tech} key={`${project.name} - ${tech}`} />
             ))}
           </div>
         </div>
-        {isSelected && (
+        <div
+          className={`${styles.projectItemDescription} ${
+            isSelected ? styles.projectItemDescriptionVisible : ""
+          }`}
+        >
           <div
             style={{
-              marginTop: "0.5rem",
-              color: "white",
+              display: "flex",
+              width: "100%",
+              justifyContent: "space-between",
             }}
           >
+            <P>{project.for}</P>
+            <P>{project.dates}</P>
+          </div>
+          <div style={{ marginTop: "0.5rem", color: "white" }}>
             {project.description}
           </div>
-        )}
+        </div>
       </div>
     </div>
   );

@@ -10,7 +10,7 @@ interface IProps {
 
 const About = () => {
   return (
-    <div className={styles.aboutContainer} id="about">
+    <section className={styles.aboutContainer} id="about">
       <div className={styles.imageContainer}>
         <img
           src={portraitImage}
@@ -19,7 +19,7 @@ const About = () => {
         />
       </div>
       <div className={styles.bio}>
-        <H1 style={{ color: "white" }} underline>
+        <H1 style={{ color: "white" }} underlineColour="pink">
           About Me
         </H1>
         <PAbout>Hiya!</PAbout>
@@ -76,7 +76,7 @@ const About = () => {
         <PHAbout> Beat Saber</PHAbout>
         <PAbout>, where I definitely look as cool as I feel.</PAbout>
       </div>
-    </div>
+    </section>
   );
 };
 
