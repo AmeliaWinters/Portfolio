@@ -100,6 +100,7 @@ button {
   font-family: inherit;
   background-color: #1a1a1a;
   transition: outline-color 0.25s;
+  cursor: none;
 }
 button:hover {
   outline: 1px solid white;

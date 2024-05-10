@@ -27,7 +27,11 @@ export const ContactCard = () => {
         </div>
         <div>
           <PH style={{ marginRight: "1rem" }}>Email: </PH>
-          <P>AmeliaWintersDev@gmail.com</P>
+          <P>
+            <a href="mailto:AmeliaWintersDev@gmail.com">
+              AmeliaWintersDev@gmail.com
+            </a>
+          </P>
         </div>
         <br />
         <br />
