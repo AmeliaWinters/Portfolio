@@ -94,6 +94,7 @@ const App: FC = () => {
 
         {/* TODO: 
       Experience Timeline
+      resume is broken on web
       Copyright*/}
       </Greeting>
     </div>
