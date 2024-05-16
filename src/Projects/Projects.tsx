@@ -8,7 +8,7 @@ import WeddingVenue from "../Assets/Images/WeddingVenue.png";
 import Kryptos from "../Assets/Images/Kryptos.jpg";
 import H1 from "../Text/H1";
 import { ProjectBox } from "./ProjectBox";
-import { StringListParameter } from "aws-cdk-lib/aws-ssm";
+import useWindowSize from "../useWindowSize";
 
 export interface IProject {
   name: string;
@@ -84,6 +84,8 @@ const Projects = () => {
   const projectsRef = useRef<HTMLDivElement>(null);
   const containerRef = useRef<HTMLDivElement | null>(null);
 
+  const isMobile = useWindowSize().isMobile;
+
   useEffect(() => {
     const handleScroll = () => {
       const viewportCenter = window.innerHeight / 2;
@@ -104,12 +106,12 @@ const Projects = () => {
       }
     };
 
-    window.addEventListener("scroll", handleScroll);
+    if (isMobile === false) window.addEventListener("scroll", handleScroll);
 
     return () => {
       window.removeEventListener("scroll", handleScroll);
     };
-  }, []);
+  }, [isMobile]);
 
   return (
     <div className={styles.projectsContainer} id="projects">

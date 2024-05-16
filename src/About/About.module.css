@@ -76,7 +76,6 @@
   .aboutContainer {
     flex-direction: column;
     padding: 2rem 1rem;
-    border-radius: 2rem 2rem 0 0;
   }
 
   .imageContainer {

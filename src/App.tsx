@@ -20,7 +20,6 @@ const App: FC = () => {
 
   useEffect(() => {
     const handleMouseMove = (event: { clientX: any; clientY: any }) => {
-      console.log(cursor.current);
       if (cursor.current) {
         cursor.current.style.left = `${event.clientX}px`;
         cursor.current.style.top = `${event.clientY}px`;
@@ -94,7 +93,6 @@ const App: FC = () => {
 
         {/* TODO: 
       Experience Timeline
-      resume is broken on web
       Copyright*/}
       </Greeting>
     </div>

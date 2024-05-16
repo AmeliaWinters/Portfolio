@@ -11,10 +11,10 @@ const Greeting: FC<IProps> = ({ children }) => {
   const [isGreeting, setIsGreeting] = useState(true);
 
   useEffect(() => {
-    // if (environment === "dev") {
-    //   setIsGreeting(false);
-    //   return;
-    // }
+    if (environment === "dev") {
+      setIsGreeting(false);
+      return;
+    }
 
     const tl = gsap.timeline({
       defaults: { ease: "power3.out", duration: 1.5 },

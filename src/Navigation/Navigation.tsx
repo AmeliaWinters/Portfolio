@@ -1,20 +1,29 @@
 import { useState } from "react";
 import styles from "./Navigation.module.css";
 import P from "../Text/P";
-import DownloadResume from "./DownloadResume";
 import useWindowSize from "../useWindowSize";
 import { HamburgerButton } from "./HamburgerButton";
 
 const Navigation = () => {
   const [isOpen, setIsOpen] = useState(false);
   const { isMobile } = useWindowSize();
-  const tagLine = "Amelia Winters - Full-Stack Code Artist";
+  const tagLine = isMobile
+    ? "Amelia Winters - Full Stack Dev"
+    : "Amelia Winters - Full-Stack Code Artist";
 
   const scrollToSection = (sectionId: string) => {
     const section = document.getElementById(sectionId);
     if (section) {
       section.scrollIntoView({ behavior: "smooth", block: "start" });
     }
+  };
+
+  const handleDownload = () => {
+    const link = document.createElement("a");
+    link.href = "/Amelia Winters Resume.pdf";
+    link.download = "AmeliaWinters_Resume.pdf";
+    link.dispatchEvent(new MouseEvent("click"));
+    link.remove();
   };
 
   return (
@@ -61,8 +70,12 @@ const Navigation = () => {
         >
           <P>Contact</P>
         </li>
-        <li className={styles.navItem} style={{ "--animation-order": 7 }}>
-          <DownloadResume />
+        <li
+          className={styles.navItem}
+          style={{ "--animation-order": 7 }}
+          onClick={handleDownload}
+        >
+          <P>Download Resume</P>
         </li>
       </ul>
     </nav>

@@ -13,6 +13,7 @@ export const WIP = () => {
         color: "white",
         mixBlendMode: "difference",
         pointerEvents: "none",
+        width: "100dvw",
       }}
     >
       <P style={{ textAlign: "center", display: "block" }}>Work in progress</P>

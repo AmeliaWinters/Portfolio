@@ -13,6 +13,7 @@
 .skillsContainer {
   display: flex;
   justify-content: center;
+  flex-wrap: wrap;
 }
 
 .skillBox {
@@ -21,6 +22,7 @@
   border: 3px solid #fe6b86;
   border-left: none;
   max-width: 20rem;
+  margin: 1rem;
 }
 
 .skillBox:first-child {
@@ -61,4 +63,39 @@
 .skillItem:hover {
   transform: scale(1.1);
   box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+}
+
+@media (max-width: 768px) {
+  .mainHeading {
+    font-size: 2rem;
+  }
+
+  .skillsContainer {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .skillBox {
+    max-width: none;
+    border: 3px solid #fe6b86;
+    margin-bottom: 1rem;
+    padding: 1.5rem;
+    justify-content: center;
+  }
+
+  .skillsList {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+  }
+
+  .skillTitleContainer {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  .subHeading {
+    font-size: 1.25rem;
+    text-align: center;
+  }
 }

@@ -14,12 +14,7 @@ const Contact = () => {
         Let's Talk
       </P>
 
-      <div
-        style={{
-          display: "flex",
-          marginTop: "4rem",
-        }}
-      >
+      <div className={styles.contactContainer}>
         <ContactForm />
         <ContactCard />
       </div>

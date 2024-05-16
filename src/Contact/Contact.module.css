@@ -73,3 +73,38 @@
   border: 3px solid #fe6b86;
   border-radius: 50px;
 }
+
+.contactContainer {
+  display: flex;
+  margin-top: 4rem;
+}
+
+@media (max-width: 768px) {
+  .container {
+    padding: 2rem 1rem 6rem 1rem;
+    max-width: 100dvw;
+  }
+
+  .contactContainer {
+    flex-direction: column;
+    flex-flow: column-reverse;
+  }
+
+  .contactCard {
+    display: none;
+  }
+
+  .title {
+    font-size: 2rem;
+  }
+
+  .input,
+  .textarea {
+    padding: 15px;
+    width: auto;
+  }
+
+  .button {
+    margin-top: 1rem;
+  }
+}

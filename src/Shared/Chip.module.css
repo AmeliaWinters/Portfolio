@@ -13,3 +13,9 @@
 .chip:hover {
   color: #f8bec8;
 }
+
+@media (max-width: 768px) {
+  .chip {
+    font-size: 0.8rem;
+  }
+}

@@ -6,8 +6,8 @@ import P from "../Text/P";
 
 interface IProps {
   project: IProject;
-  onMouseEnter: (imageUrl: string) => void;
-  onMouseLeave: (imageUrl: string) => void;
+  onMouseEnter: () => void;
+  onMouseLeave: () => void;
   isSelected?: boolean;
 }
 
@@ -20,15 +20,14 @@ export const ProjectBox = ({
   return (
     <div
       className={styles.projectItem}
-      onMouseEnter={() => onMouseEnter(project.imageUrl)}
-      onMouseLeave={() => onMouseLeave("")}
+      onMouseEnter={() => onMouseEnter()}
+      onMouseLeave={() => onMouseLeave()}
+      onTouchEnd={() => onMouseEnter()}
     >
       <div>
         <div className={styles.projectItemTop}>
-          <H2 style={{ color: "white", display: "inline", fontWeight: 1000 }}>
-            {project.name}
-          </H2>
-          <div style={{ display: "inline-flex", flexWrap: "wrap" }}>
+          <H2 className={styles.projectName}>{project.name}</H2>
+          <div className={styles.projectSkills}>
             {project.technologies.map((tech) => (
               <Chip text={tech} key={`${project.name} - ${tech}`} />
             ))}
@@ -46,8 +45,10 @@ export const ProjectBox = ({
               justifyContent: "space-between",
             }}
           >
-            <P>{project.for}</P>
-            <P>{project.dates}</P>
+            <P style={{ fontWeight: "bold" }}>{project.for}</P>
+            <P style={{ display: "inline-block", transform: "skewX(-15deg)" }}>
+              {project.dates}
+            </P>
           </div>
           <div style={{ marginTop: "0.5rem", color: "white" }}>
             {project.description}

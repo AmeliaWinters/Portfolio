@@ -101,9 +101,9 @@
     flex-grow: 1;
     padding: 1rem 0;
     backdrop-filter: blur(10px);
-    transition: transform 1s ease-in-out;
+    transition: transform 0.5s ease-in-out;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    animation: expandOut 1s ease-out forwards;
+    animation: expandOut 0.5s ease-out forwards;
   }
 
   @keyframes expandOut {
@@ -118,13 +118,12 @@
   }
 
   .navItem {
-    animation: fadeInAndScale 1.5s ease-out forwards;
-    animation-delay: calc(0.3s + 0.2s * var(--animation-order));
+    animation: fadeInAndScale 1s ease-out forwards;
+    animation-delay: calc(0.2s * var(--animation-order));
   }
 
   .navItem p {
     display: block;
-    padding: 12px 10px;
     text-align: center;
   }
 
@@ -132,7 +131,7 @@
     margin-left: auto;
     background: none;
     border: none;
-    color: #fe6b86;
+    color: white;
     font-size: 30px;
     display: block;
     width: fit-content;
