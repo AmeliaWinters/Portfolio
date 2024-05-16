@@ -11,10 +11,10 @@ const Greeting: FC<IProps> = ({ children }) => {
   const [isGreeting, setIsGreeting] = useState(true);
 
   useEffect(() => {
-    if (environment === "dev") {
-      setIsGreeting(false); // Skip animation in development mode
-      return;
-    }
+    // if (environment === "dev") {
+    //   setIsGreeting(false);
+    //   return;
+    // }
 
     const tl = gsap.timeline({
       defaults: { ease: "power3.out", duration: 1.5 },
@@ -41,16 +41,25 @@ const Greeting: FC<IProps> = ({ children }) => {
         opacity: 0,
         duration: 2,
       });
+
+    return () => {
+      tl.kill();
+    };
   }, []);
+
+  const handleSkip = () => {
+    setIsGreeting(false);
+  };
 
   return (
     <>
       {isGreeting && (
-        <div className={styles.fullScreen}>
+        <div className={styles.fullScreen} onClick={handleSkip}>
           <h1 className={`${styles.hiya}`}>Hiya!</h1>
           <h2 className={`${styles.greeting}`}>
             I hope your day has been treating you well.
           </h2>
+          <p className={styles.skipNotification}>Click to skip</p>
         </div>
       )}
 
