@@ -17,29 +17,29 @@ const Greeting: FC<IProps> = ({ children }) => {
     }
 
     const tl = gsap.timeline({
-      defaults: { ease: "power3.out", duration: 2 },
+      defaults: { ease: "power3.out", duration: 1.5 },
       onComplete: () => setIsGreeting(false),
     });
 
     tl.fromTo(
       `.${styles.hiya}`,
       { opacity: 0, scale: 0.3, rotate: -10 },
-      { opacity: 1, scale: 1, rotate: 0, duration: 2, stagger: 0.3 }
+      { opacity: 1, scale: 1, rotate: 0, duration: 1.5, stagger: 0.3 }
     )
       .to(`.${styles.hiya}`, { opacity: 0, scale: 0.8, rotate: 10 }, "+=1")
       .fromTo(
         `.${styles.greeting}`,
         { opacity: 0, scale: 0.3, rotate: -10 },
-        { opacity: 1, scale: 1, rotate: 0, duration: 2, stagger: 0.3 }
+        { opacity: 1, scale: 1, rotate: 0, duration: 1.5, stagger: 0.3 }
       )
       .to(`.${styles.fullScreen}`, {
         filter: "blur(5px)",
-        duration: 2,
+        duration: 1.5,
         delay: 2,
       })
       .to(`.${styles.fullScreen}`, {
         opacity: 0,
-        duration: 3,
+        duration: 2,
       });
   }, []);
 
