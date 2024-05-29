@@ -22,7 +22,6 @@
   border: 3px solid #fe6b86;
   border-left: none;
   max-width: 20rem;
-  margin: 1rem;
 }
 
 .skillBox:first-child {
@@ -81,6 +80,7 @@
     margin-bottom: 1rem;
     padding: 1.5rem;
     justify-content: center;
+    margin: 1rem;
   }
 
   .skillsList {

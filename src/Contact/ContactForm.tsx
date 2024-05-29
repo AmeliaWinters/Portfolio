@@ -1,7 +1,7 @@
 import { useState } from "react";
 import styles from "./Contact.module.css";
-import P from "../Text/P";
 import sharedStyles from "../sharedStyles.module.css";
+import { apiUrl } from "../AImelia/ChatWindow";
 
 interface EmailForm {
   name: string;
@@ -16,6 +16,8 @@ export const ContactForm = () => {
     message: "",
   });
 
+  const [statusMessage, setStatusMessage] = useState<string | null>(null);
+
   const handleChange = (
     e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
   ) => {
@@ -25,9 +27,32 @@ export const ContactForm = () => {
     });
   };
 
-  const handleSubmit = () => {
-    console.log("Sending form data...", formData);
+  const handleSubmit = async () => {
+    setStatusMessage(null);
+    try {
+      const response = await fetch(`${apiUrl}/sendEmail`, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(formData),
+      });
+
+      if (response.ok) {
+        const data = await response.json();
+        console.log("Email sent successfully:", data.messageId);
+        setStatusMessage("Email sent successfully!");
+      } else {
+        const errorData = await response.json();
+        console.error("Error sending email:", errorData);
+        setStatusMessage("Failed to send email.");
+      }
+    } catch (error) {
+      console.error("Error:", error);
+      setStatusMessage("Failed to send email.");
+    }
   };
+
   return (
     <div className={sharedStyles.flexColumnWidthFillAvailable}>
       <input
@@ -55,9 +80,10 @@ export const ContactForm = () => {
         className={styles.textarea}
       />
       <br />
-      <button onClick={() => handleSubmit()} className={styles.button}>
+      <button onClick={handleSubmit} className={styles.button}>
         Send
       </button>
+      {statusMessage && <p>{statusMessage}</p>}
     </div>
   );
 };

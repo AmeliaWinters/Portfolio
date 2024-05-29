@@ -7,9 +7,7 @@ import { HamburgerButton } from "./HamburgerButton";
 const Navigation = () => {
   const [isOpen, setIsOpen] = useState(false);
   const { isMobile } = useWindowSize();
-  const tagLine = isMobile
-    ? "Amelia Winters - Full Stack Dev"
-    : "Amelia Winters - Full-Stack Code Artist";
+  const tagLine = "Amelia Winters - Full Stack Dev";
 
   const scrollToSection = (sectionId: string) => {
     const section = document.getElementById(sectionId);
